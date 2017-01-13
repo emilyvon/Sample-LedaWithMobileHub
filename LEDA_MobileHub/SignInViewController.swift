@@ -93,7 +93,7 @@ extension SignInViewController: AWSCognitoUserPoolsSignInHandler {
     func handleUserPoolSignInFlowStart() {
         //        guard let email = self.emailTextField.text, let password = self.passwordTextField.text else { return }
         
-        let email = "chris@appliquette.com.au"
+        let email = "chris"
         let password = "passwordA1#"
         
         self.passwordAuthenticationCompletion?.setResult(AWSCognitoIdentityPasswordAuthenticationDetails(username: email, password: password))
