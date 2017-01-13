@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBEBF5CE1E2878DB0082C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */; };
+		EBEBF5D01E2878DB0082C029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF5CF1E2878DB0082C029 /* ViewController.swift */; };
+		EBEBF5D31E2878DB0082C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D11E2878DB0082C029 /* Main.storyboard */; };
+		EBEBF5D51E2878DB0082C029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D41E2878DB0082C029 /* Assets.xcassets */; };
+		EBEBF5D81E2878DB0082C029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D61E2878DB0082C029 /* LaunchScreen.storyboard */; };
+		EBEBF5EB1E287AF70082C029 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */; };
+		EBEBF5EC1E287AF70082C029 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E21E287AF70082C029 /* AWSCore.framework */; };
+		EBEBF5ED1E287AF70082C029 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E31E287AF70082C029 /* AWSDynamoDB.framework */; };
+		EBEBF5EE1E287AF70082C029 /* AWSPinpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E41E287AF70082C029 /* AWSPinpoint.framework */; };
+		EBEBF5EF1E287AF70082C029 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E51E287AF70082C029 /* AWSS3.framework */; };
+		EBEBF5F01E287AF70082C029 /* Amazon_Software_License.txt in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5E71E287AF70082C029 /* Amazon_Software_License.txt */; };
+		EBEBF5F11E287AF70082C029 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E81E287AF70082C029 /* AWSCognito.framework */; };
+		EBEBF5F21E287AF70082C029 /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5E91E287AF70082C029 /* NOTICE */; };
+		EBEBF5F31E287AF70082C029 /* CheckXcodeVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5EA1E287AF70082C029 /* CheckXcodeVersion.sh */; };
+		EBEBF5F41E287B310082C029 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */; };
+		EBEBF5F51E287B310082C029 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEBF5F61E287B310082C029 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E21E287AF70082C029 /* AWSCore.framework */; };
+		EBEBF5F71E287B310082C029 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E21E287AF70082C029 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEBF5F81E287B310082C029 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E31E287AF70082C029 /* AWSDynamoDB.framework */; };
+		EBEBF5F91E287B310082C029 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E31E287AF70082C029 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEBF5FA1E287B310082C029 /* AWSPinpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E41E287AF70082C029 /* AWSPinpoint.framework */; };
+		EBEBF5FB1E287B310082C029 /* AWSPinpoint.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E41E287AF70082C029 /* AWSPinpoint.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEBF5FC1E287B310082C029 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E51E287AF70082C029 /* AWSS3.framework */; };
+		EBEBF5FD1E287B310082C029 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E51E287AF70082C029 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEBF5FE1E287B310082C029 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E81E287AF70082C029 /* AWSCognito.framework */; };
+		EBEBF5FF1E287B310082C029 /* AWSCognito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E81E287AF70082C029 /* AWSCognito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEBF60A1E287B760082C029 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6031E287B760082C029 /* AWSConfiguration.swift */; };
+		EBEBF60B1E287B760082C029 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6041E287B760082C029 /* AWSMobileClient.swift */; };
+		EBEBF60C1E287B760082C029 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6051E287B760082C029 /* AWSMobileHubHelper.framework */; };
+		EBEBF6111E287BB50082C029 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6101E287BB50082C029 /* libz.tbd */; };
+		EBEBF6131E287BBC0082C029 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */; };
+		EBEBF6161E287E430082C029 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6141E287E430082C029 /* Locations.swift */; };
+		EBEBF6171E287E430082C029 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6151E287E430082C029 /* Notes.swift */; };
+		EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6181E288C7C0082C029 /* SignInViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EBEBF6001E287B310082C029 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EBEBF5FF1E287B310082C029 /* AWSCognito.framework in Embed Frameworks */,
+				EBEBF5F51E287B310082C029 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
+				EBEBF5FB1E287B310082C029 /* AWSPinpoint.framework in Embed Frameworks */,
+				EBEBF5F91E287B310082C029 /* AWSDynamoDB.framework in Embed Frameworks */,
+				EBEBF5F71E287B310082C029 /* AWSCore.framework in Embed Frameworks */,
+				EBEBF5FD1E287B310082C029 /* AWSS3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EBEBF5CA1E2878DB0082C029 /* LEDA_MobileHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDA_MobileHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBEBF5CF1E2878DB0082C029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBEBF5D21E2878DB0082C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBEBF5D41E2878DB0082C029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBEBF5D71E2878DB0082C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBEBF5D91E2878DB0082C029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
+		EBEBF5E21E287AF70082C029 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		EBEBF5E31E287AF70082C029 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
+		EBEBF5E41E287AF70082C029 /* AWSPinpoint.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSPinpoint.framework; sourceTree = "<group>"; };
+		EBEBF5E51E287AF70082C029 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		EBEBF5E71E287AF70082C029 /* Amazon_Software_License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Amazon_Software_License.txt; sourceTree = "<group>"; };
+		EBEBF5E81E287AF70082C029 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
+		EBEBF5E91E287AF70082C029 /* NOTICE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE; sourceTree = "<group>"; };
+		EBEBF5EA1E287AF70082C029 /* CheckXcodeVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CheckXcodeVersion.sh; sourceTree = "<group>"; };
+		EBEBF6031E287B760082C029 /* AWSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfiguration.swift; sourceTree = "<group>"; };
+		EBEBF6041E287B760082C029 /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		EBEBF6051E287B760082C029 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		EBEBF6101E287BB50082C029 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		EBEBF6141E287E430082C029 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		EBEBF6151E287E430082C029 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		EBEBF6181E288C7C0082C029 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBEBF5C71E2878DB0082C029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEBF6131E287BBC0082C029 /* libsqlite3.tbd in Frameworks */,
+				EBEBF6111E287BB50082C029 /* libz.tbd in Frameworks */,
+				EBEBF5F11E287AF70082C029 /* AWSCognito.framework in Frameworks */,
+				EBEBF5F61E287B310082C029 /* AWSCore.framework in Frameworks */,
+				EBEBF5EB1E287AF70082C029 /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				EBEBF5FA1E287B310082C029 /* AWSPinpoint.framework in Frameworks */,
+				EBEBF60C1E287B760082C029 /* AWSMobileHubHelper.framework in Frameworks */,
+				EBEBF5EE1E287AF70082C029 /* AWSPinpoint.framework in Frameworks */,
+				EBEBF5F81E287B310082C029 /* AWSDynamoDB.framework in Frameworks */,
+				EBEBF5FE1E287B310082C029 /* AWSCognito.framework in Frameworks */,
+				EBEBF5FC1E287B310082C029 /* AWSS3.framework in Frameworks */,
+				EBEBF5F41E287B310082C029 /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				EBEBF5ED1E287AF70082C029 /* AWSDynamoDB.framework in Frameworks */,
+				EBEBF5EC1E287AF70082C029 /* AWSCore.framework in Frameworks */,
+				EBEBF5EF1E287AF70082C029 /* AWSS3.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBEBF5C11E2878DB0082C029 = {
+			isa = PBXGroup;
+			children = (
+				EBEBF5DF1E287AF70082C029 /* Sdk */,
+				EBEBF5CC1E2878DB0082C029 /* LEDA_MobileHub */,
+				EBEBF5CB1E2878DB0082C029 /* Products */,
+				EBEBF60F1E287BB50082C029 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EBEBF5CB1E2878DB0082C029 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF5CA1E2878DB0082C029 /* LEDA_MobileHub.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBEBF5CC1E2878DB0082C029 /* LEDA_MobileHub */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF6021E287B760082C029 /* AmazonAws */,
+				EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */,
+				EBEBF5CF1E2878DB0082C029 /* ViewController.swift */,
+				EBEBF5D11E2878DB0082C029 /* Main.storyboard */,
+				EBEBF5D41E2878DB0082C029 /* Assets.xcassets */,
+				EBEBF5D61E2878DB0082C029 /* LaunchScreen.storyboard */,
+				EBEBF5D91E2878DB0082C029 /* Info.plist */,
+				EBEBF6181E288C7C0082C029 /* SignInViewController.swift */,
+			);
+			path = LEDA_MobileHub;
+			sourceTree = "<group>";
+		};
+		EBEBF5DF1E287AF70082C029 /* Sdk */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF5E01E287AF70082C029 /* Aws */,
+				EBEBF5EA1E287AF70082C029 /* CheckXcodeVersion.sh */,
+			);
+			path = Sdk;
+			sourceTree = "<group>";
+		};
+		EBEBF5E01E287AF70082C029 /* Aws */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */,
+				EBEBF5E21E287AF70082C029 /* AWSCore.framework */,
+				EBEBF5E31E287AF70082C029 /* AWSDynamoDB.framework */,
+				EBEBF5E41E287AF70082C029 /* AWSPinpoint.framework */,
+				EBEBF5E51E287AF70082C029 /* AWSS3.framework */,
+				EBEBF5E61E287AF70082C029 /* extras */,
+			);
+			path = Aws;
+			sourceTree = "<group>";
+		};
+		EBEBF5E61E287AF70082C029 /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF5E71E287AF70082C029 /* Amazon_Software_License.txt */,
+				EBEBF5E81E287AF70082C029 /* AWSCognito.framework */,
+				EBEBF5E91E287AF70082C029 /* NOTICE */,
+			);
+			path = extras;
+			sourceTree = "<group>";
+		};
+		EBEBF6021E287B760082C029 /* AmazonAws */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF6031E287B760082C029 /* AWSConfiguration.swift */,
+				EBEBF6041E287B760082C029 /* AWSMobileClient.swift */,
+				EBEBF6051E287B760082C029 /* AWSMobileHubHelper.framework */,
+				EBEBF6061E287B760082C029 /* Models */,
+			);
+			path = AmazonAws;
+			sourceTree = "<group>";
+		};
+		EBEBF6061E287B760082C029 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF6071E287B760082C029 /* NoSQL */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EBEBF6071E287B760082C029 /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF6141E287E430082C029 /* Locations.swift */,
+				EBEBF6151E287E430082C029 /* Notes.swift */,
+			);
+			path = NoSQL;
+			sourceTree = "<group>";
+		};
+		EBEBF60F1E287BB50082C029 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */,
+				EBEBF6101E287BB50082C029 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBEBF5C91E2878DB0082C029 /* LEDA_MobileHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBEBF5DC1E2878DB0082C029 /* Build configuration list for PBXNativeTarget "LEDA_MobileHub" */;
+			buildPhases = (
+				EBEBF5C61E2878DB0082C029 /* Sources */,
+				EBEBF5C71E2878DB0082C029 /* Frameworks */,
+				EBEBF5C81E2878DB0082C029 /* Resources */,
+				EBEBF6001E287B310082C029 /* Embed Frameworks */,
+				EBEBF6011E287B620082C029 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LEDA_MobileHub;
+			productName = LEDA_MobileHub;
+			productReference = EBEBF5CA1E2878DB0082C029 /* LEDA_MobileHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBEBF5C21E2878DB0082C029 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = iEmRollin;
+				TargetAttributes = {
+					EBEBF5C91E2878DB0082C029 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DYS8T9C648;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EBEBF5C51E2878DB0082C029 /* Build configuration list for PBXProject "LEDA_MobileHub" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBEBF5C11E2878DB0082C029;
+			productRefGroup = EBEBF5CB1E2878DB0082C029 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBEBF5C91E2878DB0082C029 /* LEDA_MobileHub */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBEBF5C81E2878DB0082C029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEBF5F21E287AF70082C029 /* NOTICE in Resources */,
+				EBEBF5D81E2878DB0082C029 /* LaunchScreen.storyboard in Resources */,
+				EBEBF5D51E2878DB0082C029 /* Assets.xcassets in Resources */,
+				EBEBF5D31E2878DB0082C029 /* Main.storyboard in Resources */,
+				EBEBF5F31E287AF70082C029 /* CheckXcodeVersion.sh in Resources */,
+				EBEBF5F01E287AF70082C029 /* Amazon_Software_License.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EBEBF6011E287B620082C029 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBEBF5C61E2878DB0082C029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */,
+				EBEBF5D01E2878DB0082C029 /* ViewController.swift in Sources */,
+				EBEBF60A1E287B760082C029 /* AWSConfiguration.swift in Sources */,
+				EBEBF60B1E287B760082C029 /* AWSMobileClient.swift in Sources */,
+				EBEBF6161E287E430082C029 /* Locations.swift in Sources */,
+				EBEBF5CE1E2878DB0082C029 /* AppDelegate.swift in Sources */,
+				EBEBF6171E287E430082C029 /* Notes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EBEBF5D11E2878DB0082C029 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBEBF5D21E2878DB0082C029 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBEBF5D61E2878DB0082C029 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBEBF5D71E2878DB0082C029 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBEBF5DA1E2878DB0082C029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBEBF5DB1E2878DB0082C029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBEBF5DD1E2878DB0082C029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DYS8T9C648;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/Sdk/Aws/extras",
+					"$(PROJECT_DIR)/LEDA_MobileHub/AmazonAws",
+				);
+				INFOPLIST_FILE = LEDA_MobileHub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.iemrollin.LEDA-MobileHub";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EBEBF5DE1E2878DB0082C029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DYS8T9C648;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/Sdk/Aws/extras",
+					"$(PROJECT_DIR)/LEDA_MobileHub/AmazonAws",
+				);
+				INFOPLIST_FILE = LEDA_MobileHub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.iemrollin.LEDA-MobileHub";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBEBF5C51E2878DB0082C029 /* Build configuration list for PBXProject "LEDA_MobileHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBEBF5DA1E2878DB0082C029 /* Debug */,
+				EBEBF5DB1E2878DB0082C029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBEBF5DC1E2878DB0082C029 /* Build configuration list for PBXNativeTarget "LEDA_MobileHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBEBF5DD1E2878DB0082C029 /* Debug */,
+				EBEBF5DE1E2878DB0082C029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBEBF5C21E2878DB0082C029 /* Project object */;
+}

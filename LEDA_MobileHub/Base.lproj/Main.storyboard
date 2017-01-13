@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="LEDA_MobileHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3o-va-FpG">
+                                <rect key="frame" x="140" y="323" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.94770408163265307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z3o-va-FpG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RWB-tM-cNY"/>
+                            <constraint firstItem="Z3o-va-FpG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dOf-nV-Tw2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="m7J-SL-HpE">
+            <objects>
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y6I-XQ-1hw" customClass="SignInViewController" customModule="LEDA_MobileHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ERX-vb-Ymz"/>
+                        <viewControllerLayoutGuide type="bottom" id="zuZ-zS-ogH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mi7-xH-dI8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEK-aV-tlp">
+                                <rect key="frame" x="16" y="108" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OhE-gj-rky">
+                                <rect key="frame" x="16" y="165" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zH-LN-QJe">
+                                <rect key="frame" x="164" y="248" width="47" height="30"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInBtnPressed:" destination="y6I-XQ-1hw" eventType="touchUpInside" id="uDx-Gs-Sm6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91966943027210879" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5zH-LN-QJe" firstAttribute="top" secondItem="OhE-gj-rky" secondAttribute="bottom" constant="53" id="24m-is-8gu"/>
+                            <constraint firstItem="bEK-aV-tlp" firstAttribute="leading" secondItem="Mi7-xH-dI8" secondAttribute="leadingMargin" id="Jyc-1r-sBQ"/>
+                            <constraint firstItem="5zH-LN-QJe" firstAttribute="centerX" secondItem="Mi7-xH-dI8" secondAttribute="centerX" id="jiR-sq-9Cn"/>
+                            <constraint firstItem="OhE-gj-rky" firstAttribute="top" secondItem="bEK-aV-tlp" secondAttribute="bottom" constant="27" id="mPC-1X-fgG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OhE-gj-rky" secondAttribute="trailing" id="mWt-0F-gyK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bEK-aV-tlp" secondAttribute="trailing" id="pqP-xs-fIM"/>
+                            <constraint firstItem="OhE-gj-rky" firstAttribute="leading" secondItem="Mi7-xH-dI8" secondAttribute="leadingMargin" id="xQz-qp-geY"/>
+                            <constraint firstItem="bEK-aV-tlp" firstAttribute="top" secondItem="ERX-vb-Ymz" secondAttribute="bottom" constant="88" id="zWD-am-AaG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="bEK-aV-tlp" id="9yg-ZY-80N"/>
+                        <outlet property="passwordTextField" destination="OhE-gj-rky" id="1id-1l-zhF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TG-pW-OKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="36"/>
+        </scene>
+    </scenes>
+</document>
