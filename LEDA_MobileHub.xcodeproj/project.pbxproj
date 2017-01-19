@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBE64CAF1E304BCE0006D5E0 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CA91E304BCE0006D5E0 /* Days.swift */; };
+		EBE64CB01E304BCE0006D5E0 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CAA1E304BCE0006D5E0 /* Goals.swift */; };
+		EBE64CB11E304BCE0006D5E0 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CAB1E304BCE0006D5E0 /* Tasks.swift */; };
+		EBE64CB21E304BCE0006D5E0 /* UserAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CAC1E304BCE0006D5E0 /* UserAnalytics.swift */; };
+		EBE64CB31E304BCE0006D5E0 /* UserTaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CAD1E304BCE0006D5E0 /* UserTaskStatus.swift */; };
+		EBE64CB41E304BCE0006D5E0 /* UserToolStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CAE1E304BCE0006D5E0 /* UserToolStatus.swift */; };
 		EBEBF5CE1E2878DB0082C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */; };
 		EBEBF5D01E2878DB0082C029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF5CF1E2878DB0082C029 /* ViewController.swift */; };
 		EBEBF5D31E2878DB0082C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D11E2878DB0082C029 /* Main.storyboard */; };
@@ -38,8 +44,6 @@
 		EBEBF60C1E287B760082C029 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6051E287B760082C029 /* AWSMobileHubHelper.framework */; };
 		EBEBF6111E287BB50082C029 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6101E287BB50082C029 /* libz.tbd */; };
 		EBEBF6131E287BBC0082C029 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */; };
-		EBEBF6161E287E430082C029 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6141E287E430082C029 /* Locations.swift */; };
-		EBEBF6171E287E430082C029 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6151E287E430082C029 /* Notes.swift */; };
 		EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6181E288C7C0082C029 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EBE64CA91E304BCE0006D5E0 /* Days.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
+		EBE64CAA1E304BCE0006D5E0 /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		EBE64CAB1E304BCE0006D5E0 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		EBE64CAC1E304BCE0006D5E0 /* UserAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAnalytics.swift; sourceTree = "<group>"; };
+		EBE64CAD1E304BCE0006D5E0 /* UserTaskStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskStatus.swift; sourceTree = "<group>"; };
+		EBE64CAE1E304BCE0006D5E0 /* UserToolStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserToolStatus.swift; sourceTree = "<group>"; };
 		EBEBF5CA1E2878DB0082C029 /* LEDA_MobileHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDA_MobileHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBEBF5CF1E2878DB0082C029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +94,6 @@
 		EBEBF6051E287B760082C029 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
 		EBEBF6101E287BB50082C029 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		EBEBF6141E287E430082C029 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		EBEBF6151E287E430082C029 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		EBEBF6181E288C7C0082C029 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,8 +210,12 @@
 		EBEBF6071E287B760082C029 /* NoSQL */ = {
 			isa = PBXGroup;
 			children = (
-				EBEBF6141E287E430082C029 /* Locations.swift */,
-				EBEBF6151E287E430082C029 /* Notes.swift */,
+				EBE64CA91E304BCE0006D5E0 /* Days.swift */,
+				EBE64CAA1E304BCE0006D5E0 /* Goals.swift */,
+				EBE64CAB1E304BCE0006D5E0 /* Tasks.swift */,
+				EBE64CAC1E304BCE0006D5E0 /* UserAnalytics.swift */,
+				EBE64CAD1E304BCE0006D5E0 /* UserTaskStatus.swift */,
+				EBE64CAE1E304BCE0006D5E0 /* UserToolStatus.swift */,
 			);
 			path = NoSQL;
 			sourceTree = "<group>";
@@ -311,13 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE64CB01E304BCE0006D5E0 /* Goals.swift in Sources */,
 				EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */,
 				EBEBF5D01E2878DB0082C029 /* ViewController.swift in Sources */,
 				EBEBF60A1E287B760082C029 /* AWSConfiguration.swift in Sources */,
+				EBE64CB11E304BCE0006D5E0 /* Tasks.swift in Sources */,
+				EBE64CB41E304BCE0006D5E0 /* UserToolStatus.swift in Sources */,
 				EBEBF60B1E287B760082C029 /* AWSMobileClient.swift in Sources */,
-				EBEBF6161E287E430082C029 /* Locations.swift in Sources */,
+				EBE64CB21E304BCE0006D5E0 /* UserAnalytics.swift in Sources */,
+				EBE64CAF1E304BCE0006D5E0 /* Days.swift in Sources */,
 				EBEBF5CE1E2878DB0082C029 /* AppDelegate.swift in Sources */,
-				EBEBF6171E287E430082C029 /* Notes.swift in Sources */,
+				EBE64CB31E304BCE0006D5E0 /* UserTaskStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +509,7 @@
 				EBEBF5DE1E2878DB0082C029 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

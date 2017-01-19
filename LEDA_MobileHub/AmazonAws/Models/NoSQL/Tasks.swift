@@ -1,5 +1,5 @@
 //
-//  Notes.swift
+//  Tasks.swift
 //  MySampleApp
 //
 //
@@ -15,36 +15,38 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-class Notes: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class Tasks: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
-    var _userId: String?
-    var _noteId: String?
-    var _content: String?
-    var _creationDate: NSNumber?
-    var _title: String?
+    var _contentDay: NSNumber?
+    var _sort: NSNumber?
+    var _durationSeconds: NSNumber?
+    var _taskData: [String: String]?
+    var _taskTitle: String?
+    var _taskType: String?
     
     class func dynamoDBTableName() -> String {
 
-        return "ledaapp-mobilehub-99797186-Notes"
+        return "ledaapp-mobilehub-99797186-tasks"
     }
     
     class func hashKeyAttribute() -> String {
 
-        return "_userId"
+        return "_contentDay"
     }
     
     class func rangeKeyAttribute() -> String {
 
-        return "_noteId"
+        return "_sort"
     }
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
-               "_userId" : "userId",
-               "_noteId" : "noteId",
-               "_content" : "content",
-               "_creationDate" : "creationDate",
-               "_title" : "title",
+               "_contentDay" : "content_day",
+               "_sort" : "sort",
+               "_durationSeconds" : "duration_seconds",
+               "_taskData" : "task_data",
+               "_taskTitle" : "task_title",
+               "_taskType" : "task_type",
         ]
     }
 }

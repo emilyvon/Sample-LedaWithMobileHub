@@ -35,28 +35,79 @@ class ViewController: UIViewController {
     
     @IBAction func insert(_ sender: Any) {
         
-        
-        insertData()
+        queryUserTaskStatus()
         
     }
     
-    func insertData() {
+    func queryUserAnalytics() {
         
-        let objectMapper = AWSDynamoDBObjectMapper.default()
+        let objMapper = AWSDynamoDBObjectMapper.default()
         
-        let itemToCreate = Notes()
         
-        itemToCreate?._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-        itemToCreate?._noteId = "note-1"
-        itemToCreate?._content = "This is the content of the note."
-        itemToCreate?._creationDate = 2016
-        itemToCreate?._title = "Emily's first note"
-        objectMapper.save(itemToCreate!) { (error) in
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
+        let identityId = AWSIdentityManager.defaultIdentityManager().identityId!
+        let exp = AWSDynamoDBQueryExpression()
+        
+        exp.keyConditionExpression = "#userId = :userId"
+        exp.expressionAttributeNames = ["#userId": "userId"]
+        
+        exp.expressionAttributeValues = [":userId": identityId]
+        
+        
+        
+        exp.projectionExpression = "userId,current_days_in_row_used,max_days_in_row_used,tasks_completed,tasks_per_category_completed"
+        
+        
+        objMapper.query(UserAnalytics.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            
+            DispatchQueue.main.async {
+                print("❗️error: \(error?.localizedDescription)")
+                print("❗️output: \(output?.items)")
             }
-            print("Item saved.")
+            
+        }
+        
+    }
+    
+    
+    func queryUserTaskStatus() {
+        
+        let objMapper = AWSDynamoDBObjectMapper.default()
+        
+        
+        let identityId = AWSIdentityManager.defaultIdentityManager().identityId!
+        let exp = AWSDynamoDBQueryExpression()
+        exp.keyConditionExpression = "#userId = :userId AND #sort = :sort"
+        
+        exp.expressionAttributeNames = ["#userId": "userId", "#sort" : "task_day"]
+        
+        exp.expressionAttributeValues = [":userId": identityId, ":sort": 0]
+        
+        
+        
+        exp.projectionExpression = "userId,task_day,is_checked_off,is_completed,tasks"
+        
+       
+        objMapper.query(UserTaskStatus.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            
+            DispatchQueue.main.async {
+                print("❗️error: \(error?.localizedDescription)")
+                print("❗️error: \(output?.items)")
+            }
+            
+        }
+        
+    }
+    
+    func loadData() {
+        
+        let mapper = AWSDynamoDBObjectMapper.default()
+        
+        let identityId = AWSIdentityManager.defaultIdentityManager().identityId!
+        
+        mapper.load(UserTaskStatus.self, hashKey: identityId, rangeKey: 0) { (model: AWSDynamoDBObjectModel?, error: Error?) in
+            
+            
+            
         }
         
     }

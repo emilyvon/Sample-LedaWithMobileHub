@@ -1,5 +1,5 @@
 //
-//  Locations.swift
+//  UserTaskStatus.swift
 //  MySampleApp
 //
 //
@@ -15,18 +15,17 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-class Locations: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class UserTaskStatus: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
-    var _itemId: String?
-    var _category: String?
-    var _latitude: NSNumber?
-    var _longitude: NSNumber?
-    var _name: String?
+    var _taskDay: NSNumber?
+    var _isCheckedOff: NSNumber?
+    var _isCompleted: NSNumber?
+    var _tasks: [String: String]?
     
     class func dynamoDBTableName() -> String {
 
-        return "ledaapp-mobilehub-99797186-Locations"
+        return "ledaapp-mobilehub-99797186-user_task_status"
     }
     
     class func hashKeyAttribute() -> String {
@@ -36,17 +35,16 @@ class Locations: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     class func rangeKeyAttribute() -> String {
 
-        return "_itemId"
+        return "_taskDay"
     }
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
                "_userId" : "userId",
-               "_itemId" : "itemId",
-               "_category" : "category",
-               "_latitude" : "latitude",
-               "_longitude" : "longitude",
-               "_name" : "name",
+               "_taskDay" : "task_day",
+               "_isCheckedOff" : "is_checked_off",
+               "_isCompleted" : "is_completed",
+               "_tasks" : "tasks",
         ]
     }
 }
