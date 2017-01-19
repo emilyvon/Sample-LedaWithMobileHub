@@ -4,6 +4,7 @@
 <dict>
     <key>AWS</key>
     <dict>
+        
         <key>IdentityManager</key>
         <dict>
             <key>Default</key>
@@ -27,6 +28,16 @@
             <key>ProjectClientId</key>
             <string>MobileHub c2a3d9ce-04ea-4382-8a8b-a64c07f0138e aws-my-sample-app-ios-swift-v0.8</string>
         </dict>
+        
+        <key>DynamoDBObjectMapper</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>ap-southeast-2</string>
+            </dict>
+        </dict>
+        
     </dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

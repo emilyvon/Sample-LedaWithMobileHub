@@ -42,6 +42,14 @@ class SignInViewController: UIViewController {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
     func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
         
         AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider) { (result: Any?, error: Error?) in

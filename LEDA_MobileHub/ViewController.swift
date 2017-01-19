@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSMobileHubHelper
+import AWSDynamoDB
 
 class ViewController: UIViewController {
     
@@ -32,6 +33,33 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func insert(_ sender: Any) {
+        
+        
+        insertData()
+        
+    }
+    
+    func insertData() {
+        
+        let objectMapper = AWSDynamoDBObjectMapper.default()
+        
+        let itemToCreate = Notes()
+        
+        itemToCreate?._userId = AWSIdentityManager.defaultIdentityManager().identityId!
+        itemToCreate?._noteId = "note-1"
+        itemToCreate?._content = "This is the content of the note."
+        itemToCreate?._creationDate = 2016
+        itemToCreate?._title = "Emily's first note"
+        objectMapper.save(itemToCreate!) { (error) in
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("Item saved.")
+        }
+        
+    }
     
     
     func presentSignInViewController() {
