@@ -33,12 +33,20 @@ class ViewController: UIViewController {
     
     @IBAction func insert(_ sender: Any) {
         
-        queryTask(withContent: 0)
+        logout()
+    }
+    
+    func logout() {
         
+        AWSIdentityManager.defaultIdentityManager().logout { (obj: Any?, error: Error?) in
+            DispatchQueue.main.async {
+                self.presentSignInViewController()
+            }
+        }
     }
     
     
-    func saveUerTaskStatus(withContent dayNo: NSNumber) {
+    func saveUserTaskStatus(withContent dayNo: NSNumber) {
         
         let mapper = AWSDynamoDBObjectMapper.default()
         let item = UserTaskStatus()!
@@ -47,7 +55,7 @@ class ViewController: UIViewController {
         item._isCheckedOff = 0
         item._isCompleted = 0
         item._taskDay = dayNo
-        item._tasks = ["default":0]
+        item._tasks = ["text":"text", "bool": true, "number": 11, "dict": ["string": "hello"], "list": [3,4,5,6,8]]
         
         
         mapper.save(item) { (error: Error?) in
@@ -150,7 +158,7 @@ class ViewController: UIViewController {
         exp.keyConditionExpression = "#content_day = :content_day"
         exp.expressionAttributeNames = ["#content_day": "content_day"]
         exp.expressionAttributeValues = [":content_day": dayNo]
-        exp.projectionExpression = "content_day,sort,duration_seconds,task_title,task_type"
+        exp.projectionExpression = "content_day,sort,duration_seconds,task_title,task_type,task_data,task_category,task_subcategory"
         
         mapper.query(Tasks.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async {
@@ -196,7 +204,7 @@ class ViewController: UIViewController {
         
     }
     
-    func scanUserTasks(startContent startNo: Int, endContent endNo: Int) {
+    func scanTasks(startContent startNo: Int, endContent endNo: Int) {
         
         let mapper = AWSDynamoDBObjectMapper.default()
         let exp = AWSDynamoDBScanExpression()

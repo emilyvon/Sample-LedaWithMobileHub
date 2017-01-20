@@ -28,6 +28,8 @@ class SignInViewController: UIViewController {
         didSignInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.defaultIdentityManager(), queue: OperationQueue.main, using: { (notification: Notification) in
             // perform successful login actions here
             
+            print("perform successful login actions here ✅")
+            
         })
         
     }
@@ -53,13 +55,17 @@ class SignInViewController: UIViewController {
     func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
         
         AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider) { (result: Any?, error: Error?) in
+            DispatchQueue.main.async {
             if error == nil {
                 // handle successful login
                 
-                
+                print("handle successful login ✅")
+                self.dismiss(animated: true, completion: nil)
                 
             }
             print("❗️ Login with signin provider result = \(result), error = \(error)")
+            }
+            
         }
         
     }

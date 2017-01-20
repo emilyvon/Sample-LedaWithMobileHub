@@ -46,7 +46,7 @@ class AWSMobileClient: NSObject {
      * - returns: true if call was handled by this component
      */
     func withApplication(application: UIApplication, withURL url: NSURL, withSourceApplication sourceApplication: String?, withAnnotation annotation: AnyObject) -> Bool {
-        print("withApplication:withURL")
+        print("❗️ withApplication:withURL: isInitialized:\(isInitialized)")
         AWSIdentityManager.defaultIdentityManager().interceptApplication(application, open: url as URL, sourceApplication: sourceApplication, annotation: annotation)
         
         if (!isInitialized) {
@@ -87,7 +87,7 @@ class AWSMobileClient: NSObject {
         if (!isInitialized) {
             
             AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: { (result: Any?, error: Error?) in
-                print("Result: \(result) \n Error:\(error)")
+                print("❗️ Result: \(result) \n Error:\(error)")
             })
             
             /*AWSIdentityManager.defaultIdentityManager().resumeSessionWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
