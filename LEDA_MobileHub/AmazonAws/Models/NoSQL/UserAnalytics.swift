@@ -42,4 +42,6 @@ class UserAnalytics: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
                "_tasksPerCategoryCompleted" : "tasks_per_category_completed",
         ]
     }
+    
+    
 }

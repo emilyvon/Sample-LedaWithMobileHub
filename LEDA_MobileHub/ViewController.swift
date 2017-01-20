@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func insert(_ sender: Any) {
         
-        queryUserAnalytics()
+        queryTask(withContent: 0)
         
     }
     
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func queryUserToolStatus() {
+    func queryUserToolStatus(completion: ()->()) {
         
         let mapper = AWSDynamoDBObjectMapper.default()
         
@@ -89,10 +89,16 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+        // TODO: save items individually to keychain
+        
+        // then refresh in completion block
+        completion()
+        
     }
     
     
-    func queryUserAnalytics() {
+    func queryUserAnalytics(completion: ()->()) {
         
         let objMapper = AWSDynamoDBObjectMapper.default()
         
@@ -123,8 +129,18 @@ class ViewController: UIViewController {
             }
         }
         
+        
+        // TODO: save items individually to keychain
+        
+        // then refresh in completion block
+        completion()
+
     }
     
+    
+    //==========================================================================
+    // MARK: - get all 3 tasks with different a sort key in the same content_day
+    //==========================================================================
     func queryTask(withContent dayNo:Int) {
         
         let mapper = AWSDynamoDBObjectMapper.default()
