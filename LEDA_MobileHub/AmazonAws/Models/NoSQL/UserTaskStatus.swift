@@ -21,7 +21,7 @@ class UserTaskStatus: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _taskDay: NSNumber?
     var _isCheckedOff: NSNumber?
     var _isCompleted: NSNumber?
-    var _tasks: [String: String]?
+    var _tasks: [String: Any]?
     
     class func dynamoDBTableName() -> String {
 

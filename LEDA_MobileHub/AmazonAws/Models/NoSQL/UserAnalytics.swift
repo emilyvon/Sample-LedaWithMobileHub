@@ -21,7 +21,7 @@ class UserAnalytics: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _currentDaysInRowUsed: NSNumber?
     var _maxDaysInRowUsed: NSNumber?
     var _tasksCompleted: NSNumber?
-    var _tasksPerCategoryCompleted: [String: String]?
+    var _tasksPerCategoryCompleted: [String: Any]?
     
     class func dynamoDBTableName() -> String {
 

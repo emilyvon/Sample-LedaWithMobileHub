@@ -34,15 +34,27 @@
                                     <action selector="insert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJj-t7-yaI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-WU-v93">
+                                <rect key="frame" x="24" y="166" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.94770408163265307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Z3o-va-FpG" firstAttribute="top" secondItem="z1a-WU-v93" secondAttribute="bottom" constant="136" id="2LD-7Y-0ES"/>
+                            <constraint firstItem="z1a-WU-v93" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="KQk-Ia-Zf0"/>
                             <constraint firstItem="Z3o-va-FpG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RWB-tM-cNY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z1a-WU-v93" secondAttribute="trailing" constant="8" id="ZsU-b0-KOw"/>
                             <constraint firstItem="Z3o-va-FpG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dOf-nV-Tw2"/>
                             <constraint firstItem="3c5-UU-RQn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gSQ-oM-1KW"/>
                             <constraint firstItem="3c5-UU-RQn" firstAttribute="top" secondItem="Z3o-va-FpG" secondAttribute="bottom" constant="65" id="uoC-bs-IsW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="z1a-WU-v93" id="eax-oz-Uk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

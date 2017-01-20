@@ -12,15 +12,13 @@ import AWSDynamoDB
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var resultLabel: UILabel!
 
-//    var didSignInObserver: AnyObject!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //        print("Sign In Loading")
-        
         
         
     }
@@ -35,12 +33,35 @@ class ViewController: UIViewController {
     
     @IBAction func insert(_ sender: Any) {
         
+        queryUserAnalytics()
         
-        queryTasks()
     }
     
     
-    
+    func saveUerTaskStatus(withContent dayNo: NSNumber) {
+        
+        let mapper = AWSDynamoDBObjectMapper.default()
+        let item = UserTaskStatus()!
+        
+        item._userId = AWSIdentityManager.defaultIdentityManager().identityId!
+        item._isCheckedOff = 0
+        item._isCompleted = 0
+        item._taskDay = dayNo
+        item._tasks = ["default":0]
+        
+        
+        mapper.save(item) { (error: Error?) in
+            DispatchQueue.main.async {
+                
+                if let err = error {
+                    print("saveUerTaskStatus ❌ \(err.localizedDescription)")
+                    return
+                }
+                print("saveUerTaskStatus ✅ ")
+                
+            }
+        }
+    }
     
     func queryUserToolStatus() {
         
@@ -104,15 +125,15 @@ class ViewController: UIViewController {
         
     }
     
-    func queryTasks() {
+    func queryTask(withContent dayNo:Int) {
         
         let mapper = AWSDynamoDBObjectMapper.default()
 
         let exp = AWSDynamoDBQueryExpression()
         
-        exp.keyConditionExpression = "#content_day = :content_day AND #"
+        exp.keyConditionExpression = "#content_day = :content_day"
         exp.expressionAttributeNames = ["#content_day": "content_day"]
-        exp.expressionAttributeValues = [":content_day": 18]
+        exp.expressionAttributeValues = [":content_day": dayNo]
         exp.projectionExpression = "content_day,sort,duration_seconds,task_title,task_type"
         
         mapper.query(Tasks.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
@@ -129,8 +150,7 @@ class ViewController: UIViewController {
 
         }
     }
-    
-    
+
     func queryUserTaskStatus(withTask dayNo: Int) {
         
         let objMapper = AWSDynamoDBObjectMapper.default()
@@ -160,20 +180,32 @@ class ViewController: UIViewController {
         
     }
     
-    func loadData() {
+    func scanUserTasks(startContent startNo: Int, endContent endNo: Int) {
         
         let mapper = AWSDynamoDBObjectMapper.default()
+        let exp = AWSDynamoDBScanExpression()
         
-        let identityId = AWSIdentityManager.defaultIdentityManager().identityId!
+        exp.filterExpression = "content_day between :start_day and :end_day"
+        exp.expressionAttributeValues = [":start_day": startNo, ":end_day": endNo]
+        exp.projectionExpression = "content_day,sort,duration_seconds,task_title,task_type,task_data"
         
-        mapper.load(UserTaskStatus.self, hashKey: identityId, rangeKey: 0) { (model: AWSDynamoDBObjectModel?, error: Error?) in
-            
-            
-            
+        mapper.scan(Tasks.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            DispatchQueue.main.async {
+                
+                if let err = error {
+                    print("scanUserTasks ❌ \(err.localizedDescription)")
+                }
+                
+                if let items = output?.items {
+                    print("scanUserTasks ✅ \(items)")
+                }
+            }
         }
+        
         
     }
     
+
     
     func presentSignInViewController() {
         print("presentSignInViewController: \(AWSIdentityManager.defaultIdentityManager().isLoggedIn)")
