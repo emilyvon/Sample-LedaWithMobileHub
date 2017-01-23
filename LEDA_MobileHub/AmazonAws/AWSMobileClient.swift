@@ -63,7 +63,7 @@ class AWSMobileClient: NSObject {
      * - parameter application: from application delegate.
      */
     func applicationDidBecomeActive(application: UIApplication) {
-        print("applicationDidBecomeActive:")
+        print("applicationDidBecomeActive: - mobile hub")
     }
     
     
@@ -74,7 +74,7 @@ class AWSMobileClient: NSObject {
     * - parameter launchOptions: from application delegate.
     */
     func didFinishLaunching(application: UIApplication, withOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        print("didFinishLaunching:")
+        print("didFinishLaunching: - mobile hub")
 
         // Register the sign in provider instances with their unique identifier
         
@@ -98,13 +98,18 @@ class AWSMobileClient: NSObject {
  */
             isInitialized = true
         }
+        
+        print("identityId ❗️ \(AWSIdentityManager.defaultIdentityManager().identityId)")
+        if let uid = AWSIdentityManager.defaultIdentityManager().identityId {
+            KeychainSwift().set(uid, forKey: KC_USER_UID)
+        }
 
         return didFinishLaunching
     }
     
     func setupUserPool() {
         
-        print("✅ setupUserPool")
+        print("✅ setupUserPool - mobile hub")
         
         // register your user pool configuration
         AWSCognitoUserPoolsSignInProvider.setupUserPool(withId: AWSCognitoUserPoolId, cognitoIdentityUserPoolAppClientId: AWSCognitoUserPoolAppClientId, cognitoIdentityUserPoolAppClientSecret: AWSCognitoUserPoolClientSecret, region: AWSCognitoUserPoolRegion)

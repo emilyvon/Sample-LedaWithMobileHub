@@ -15,9 +15,8 @@
 		EBE64CB41E304BCE0006D5E0 /* UserToolStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE64CAE1E304BCE0006D5E0 /* UserToolStatus.swift */; };
 		EBEBF5CE1E2878DB0082C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */; };
 		EBEBF5D01E2878DB0082C029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF5CF1E2878DB0082C029 /* ViewController.swift */; };
-		EBEBF5D31E2878DB0082C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D11E2878DB0082C029 /* Main.storyboard */; };
+		EBEBF5D31E2878DB0082C029 /* Proj_Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D11E2878DB0082C029 /* Proj_Main.storyboard */; };
 		EBEBF5D51E2878DB0082C029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D41E2878DB0082C029 /* Assets.xcassets */; };
-		EBEBF5D81E2878DB0082C029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEBF5D61E2878DB0082C029 /* LaunchScreen.storyboard */; };
 		EBEBF5EB1E287AF70082C029 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */; };
 		EBEBF5EC1E287AF70082C029 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E21E287AF70082C029 /* AWSCore.framework */; };
 		EBEBF5ED1E287AF70082C029 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF5E31E287AF70082C029 /* AWSDynamoDB.framework */; };
@@ -45,6 +44,67 @@
 		EBEBF6111E287BB50082C029 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6101E287BB50082C029 /* libz.tbd */; };
 		EBEBF6131E287BBC0082C029 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */; };
 		EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6181E288C7C0082C029 /* SignInViewController.swift */; };
+		EBF3A7E91E35CE430044F9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7E81E35CE430044F9ED /* Main.storyboard */; };
+		EBF3A7EC1E35CEF50044F9ED /* Breathe-02.mov in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7EB1E35CEF50044F9ED /* Breathe-02.mov */; };
+		EBF3A7F21E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7EF1E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Medium.otf */; };
+		EBF3A7F31E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F01E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Regular.otf */; };
+		EBF3A7F41E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F11E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Bold.otf */; };
+		EBF3A7FD1E35CF270044F9ED /* Coffee.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F51E35CF270044F9ED /* Coffee.gif */; };
+		EBF3A7FE1E35CF270044F9ED /* Coffee2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F61E35CF270044F9ED /* Coffee2x.gif */; };
+		EBF3A7FF1E35CF270044F9ED /* Music.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F71E35CF270044F9ED /* Music.gif */; };
+		EBF3A8001E35CF270044F9ED /* Music2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F81E35CF270044F9ED /* Music2x.gif */; };
+		EBF3A8011E35CF270044F9ED /* Park.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7F91E35CF270044F9ED /* Park.gif */; };
+		EBF3A8021E35CF270044F9ED /* Park2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7FA1E35CF270044F9ED /* Park2x.gif */; };
+		EBF3A8031E35CF270044F9ED /* Reading.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7FB1E35CF270044F9ED /* Reading.gif */; };
+		EBF3A8041E35CF270044F9ED /* Reading2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A7FC1E35CF270044F9ED /* Reading2x.gif */; };
+		EBF3A81C1E35DC700044F9ED /* DailyGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8061E35DC700044F9ED /* DailyGoalViewController.swift */; };
+		EBF3A81D1E35DC700044F9ED /* DailyTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8071E35DC700044F9ED /* DailyTasksViewController.swift */; };
+		EBF3A81E1E35DC700044F9ED /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8081E35DC700044F9ED /* AccountViewController.swift */; };
+		EBF3A81F1E35DC700044F9ED /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8091E35DC700044F9ED /* ProgressViewController.swift */; };
+		EBF3A8201E35DC700044F9ED /* WeekviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A80A1E35DC700044F9ED /* WeekviewViewController.swift */; };
+		EBF3A8211E35DC700044F9ED /* WeekviewTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A80B1E35DC700044F9ED /* WeekviewTasksViewController.swift */; };
+		EBF3A8221E35DC700044F9ED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A80C1E35DC700044F9ED /* LoginViewController.swift */; };
+		EBF3A8231E35DC700044F9ED /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A80D1E35DC700044F9ED /* QuizViewController.swift */; };
+		EBF3A8241E35DC700044F9ED /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A80E1E35DC700044F9ED /* QuizResultViewController.swift */; };
+		EBF3A8251E35DC710044F9ED /* EditDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A80F1E35DC700044F9ED /* EditDetailsViewController.swift */; };
+		EBF3A8261E35DC710044F9ED /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8101E35DC700044F9ED /* PrivacyViewController.swift */; };
+		EBF3A8271E35DC710044F9ED /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8111E35DC700044F9ED /* TermsViewController.swift */; };
+		EBF3A8281E35DC710044F9ED /* DailyGoalCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8121E35DC700044F9ED /* DailyGoalCheckListViewController.swift */; };
+		EBF3A8291E35DC710044F9ED /* GiveRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8131E35DC700044F9ED /* GiveRatingViewController.swift */; };
+		EBF3A82A1E35DC710044F9ED /* SubmitRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8141E35DC700044F9ED /* SubmitRatingViewController.swift */; };
+		EBF3A82B1E35DC710044F9ED /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8151E35DC700044F9ED /* ForgotViewController.swift */; };
+		EBF3A82C1E35DC710044F9ED /* HelpNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8161E35DC700044F9ED /* HelpNavigationViewController.swift */; };
+		EBF3A82D1E35DC710044F9ED /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8171E35DC700044F9ED /* HelpViewController.swift */; };
+		EBF3A82E1E35DC710044F9ED /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8181E35DC700044F9ED /* SideMenuTableViewController.swift */; };
+		EBF3A82F1E35DC710044F9ED /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8191E35DC700044F9ED /* CountdownViewController.swift */; };
+		EBF3A8301E35DC710044F9ED /* CustomVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A81A1E35DC700044F9ED /* CustomVideoPlayerViewController.swift */; };
+		EBF3A8311E35DC710044F9ED /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A81B1E35DC700044F9ED /* HowToViewController.swift */; };
+		EBF3A8331E35DCAF0044F9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF3A8321E35DCAF0044F9ED /* LaunchScreen.storyboard */; };
+		EBF3A8481E35DDBA0044F9ED /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8371E35DDBA0044F9ED /* VideoPlayerView.swift */; };
+		EBF3A8491E35DDBA0044F9ED /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8381E35DDBA0044F9ED /* VideosCollectionViewCell.swift */; };
+		EBF3A84A1E35DDBA0044F9ED /* WeekviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8391E35DDBA0044F9ED /* WeekviewTableViewCell.swift */; };
+		EBF3A84B1E35DDBA0044F9ED /* WeekviewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A83A1E35DDBA0044F9ED /* WeekviewTaskTableViewCell.swift */; };
+		EBF3A84C1E35DDBA0044F9ED /* TestResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A83B1E35DDBA0044F9ED /* TestResultsTableViewCell.swift */; };
+		EBF3A84D1E35DDBA0044F9ED /* QuizResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A83C1E35DDBA0044F9ED /* QuizResultButton.swift */; };
+		EBF3A84E1E35DDBA0044F9ED /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A83D1E35DDBA0044F9ED /* HelpTableViewCell.swift */; };
+		EBF3A84F1E35DDBA0044F9ED /* DailyGoalCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A83E1E35DDBA0044F9ED /* DailyGoalCheckListTableViewCell.swift */; };
+		EBF3A8501E35DDBA0044F9ED /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A83F1E35DDBA0044F9ED /* RatingControl.swift */; };
+		EBF3A8511E35DDBA0044F9ED /* TaskWhiteBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8401E35DDBA0044F9ED /* TaskWhiteBgView.swift */; };
+		EBF3A8521E35DDBA0044F9ED /* Marker3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8411E35DDBA0044F9ED /* Marker3.swift */; };
+		EBF3A8531E35DDBA0044F9ED /* Marker3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8421E35DDBA0044F9ED /* Marker3View.swift */; };
+		EBF3A8541E35DDBA0044F9ED /* SecureTextEntryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8431E35DDBA0044F9ED /* SecureTextEntryButton.swift */; };
+		EBF3A8551E35DDBA0044F9ED /* TaskBackgroundOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8441E35DDBA0044F9ED /* TaskBackgroundOutlineView.swift */; };
+		EBF3A8561E35DDBA0044F9ED /* KeepLoggedInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8451E35DDBA0044F9ED /* KeepLoggedInButton.swift */; };
+		EBF3A8571E35DDBA0044F9ED /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8461E35DDBA0044F9ED /* SideMenuTableViewCell.swift */; };
+		EBF3A8581E35DDBA0044F9ED /* VideoPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8471E35DDBA0044F9ED /* VideoPlayerSlider.swift */; };
+		EBF3A85A1E35DDD80044F9ED /* DailyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8591E35DDD80044F9ED /* DailyTask.swift */; };
+		EBF3A85D1E35DDF10044F9ED /* AWSClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A85C1E35DDF10044F9ED /* AWSClientManager.swift */; };
+		EBF3A8611E35DE010044F9ED /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A85F1E35DE010044F9ED /* Helper.swift */; };
+		EBF3A8621E35DE010044F9ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8601E35DE010044F9ED /* Constants.swift */; };
+		EBF3A8671E35DE100044F9ED /* SwiftAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8641E35DE100044F9ED /* SwiftAlertView.swift */; };
+		EBF3A8681E35DE100044F9ED /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8651E35DE100044F9ED /* KeychainSwiftDistrib.swift */; };
+		EBF3A8691E35DE100044F9ED /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A8661E35DE100044F9ED /* PopAnimator.swift */; };
+		EBF3A86B1E35DFBE0044F9ED /* AWSMobileHubClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3A86A1E35DFBE0044F9ED /* AWSMobileHubClientManager.swift */; };
 		EC724BD6EB0196E0B9C73392 /* Pods_LEDA_MobileHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D2D6BB0E9317044E3079C /* Pods_LEDA_MobileHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,9 +140,8 @@
 		EBEBF5CA1E2878DB0082C029 /* LEDA_MobileHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDA_MobileHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBEBF5CF1E2878DB0082C029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBEBF5D21E2878DB0082C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBEBF5D21E2878DB0082C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Proj_Main.storyboard; sourceTree = "<group>"; };
 		EBEBF5D41E2878DB0082C029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EBEBF5D71E2878DB0082C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBEBF5D91E2878DB0082C029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBEBF5E11E287AF70082C029 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
 		EBEBF5E21E287AF70082C029 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
@@ -99,6 +158,67 @@
 		EBEBF6101E287BB50082C029 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		EBEBF6181E288C7C0082C029 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EBF3A7E81E35CE430044F9ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EBF3A7EB1E35CEF50044F9ED /* Breathe-02.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Breathe-02.mov"; sourceTree = "<group>"; };
+		EBF3A7EF1E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Radomir Tinkov - Gilroy-Medium.otf"; sourceTree = "<group>"; };
+		EBF3A7F01E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Radomir Tinkov - Gilroy-Regular.otf"; sourceTree = "<group>"; };
+		EBF3A7F11E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Radomir Tinkov - Gilroy-Bold.otf"; sourceTree = "<group>"; };
+		EBF3A7F51E35CF270044F9ED /* Coffee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Coffee.gif; sourceTree = "<group>"; };
+		EBF3A7F61E35CF270044F9ED /* Coffee2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Coffee2x.gif; sourceTree = "<group>"; };
+		EBF3A7F71E35CF270044F9ED /* Music.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Music.gif; sourceTree = "<group>"; };
+		EBF3A7F81E35CF270044F9ED /* Music2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Music2x.gif; sourceTree = "<group>"; };
+		EBF3A7F91E35CF270044F9ED /* Park.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Park.gif; sourceTree = "<group>"; };
+		EBF3A7FA1E35CF270044F9ED /* Park2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Park2x.gif; sourceTree = "<group>"; };
+		EBF3A7FB1E35CF270044F9ED /* Reading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Reading.gif; sourceTree = "<group>"; };
+		EBF3A7FC1E35CF270044F9ED /* Reading2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Reading2x.gif; sourceTree = "<group>"; };
+		EBF3A8061E35DC700044F9ED /* DailyGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGoalViewController.swift; sourceTree = "<group>"; };
+		EBF3A8071E35DC700044F9ED /* DailyTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTasksViewController.swift; sourceTree = "<group>"; };
+		EBF3A8081E35DC700044F9ED /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		EBF3A8091E35DC700044F9ED /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		EBF3A80A1E35DC700044F9ED /* WeekviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekviewViewController.swift; sourceTree = "<group>"; };
+		EBF3A80B1E35DC700044F9ED /* WeekviewTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekviewTasksViewController.swift; sourceTree = "<group>"; };
+		EBF3A80C1E35DC700044F9ED /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EBF3A80D1E35DC700044F9ED /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		EBF3A80E1E35DC700044F9ED /* QuizResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
+		EBF3A80F1E35DC700044F9ED /* EditDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailsViewController.swift; sourceTree = "<group>"; };
+		EBF3A8101E35DC700044F9ED /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		EBF3A8111E35DC700044F9ED /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		EBF3A8121E35DC700044F9ED /* DailyGoalCheckListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGoalCheckListViewController.swift; sourceTree = "<group>"; };
+		EBF3A8131E35DC700044F9ED /* GiveRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveRatingViewController.swift; sourceTree = "<group>"; };
+		EBF3A8141E35DC700044F9ED /* SubmitRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitRatingViewController.swift; sourceTree = "<group>"; };
+		EBF3A8151E35DC700044F9ED /* ForgotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
+		EBF3A8161E35DC700044F9ED /* HelpNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpNavigationViewController.swift; sourceTree = "<group>"; };
+		EBF3A8171E35DC700044F9ED /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		EBF3A8181E35DC700044F9ED /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		EBF3A8191E35DC700044F9ED /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		EBF3A81A1E35DC700044F9ED /* CustomVideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayerViewController.swift; sourceTree = "<group>"; };
+		EBF3A81B1E35DC700044F9ED /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
+		EBF3A8321E35DCAF0044F9ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBF3A8371E35DDBA0044F9ED /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		EBF3A8381E35DDBA0044F9ED /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBF3A8391E35DDBA0044F9ED /* WeekviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekviewTableViewCell.swift; sourceTree = "<group>"; };
+		EBF3A83A1E35DDBA0044F9ED /* WeekviewTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekviewTaskTableViewCell.swift; sourceTree = "<group>"; };
+		EBF3A83B1E35DDBA0044F9ED /* TestResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultsTableViewCell.swift; sourceTree = "<group>"; };
+		EBF3A83C1E35DDBA0044F9ED /* QuizResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultButton.swift; sourceTree = "<group>"; };
+		EBF3A83D1E35DDBA0044F9ED /* HelpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
+		EBF3A83E1E35DDBA0044F9ED /* DailyGoalCheckListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGoalCheckListTableViewCell.swift; sourceTree = "<group>"; };
+		EBF3A83F1E35DDBA0044F9ED /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		EBF3A8401E35DDBA0044F9ED /* TaskWhiteBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskWhiteBgView.swift; sourceTree = "<group>"; };
+		EBF3A8411E35DDBA0044F9ED /* Marker3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker3.swift; sourceTree = "<group>"; };
+		EBF3A8421E35DDBA0044F9ED /* Marker3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker3View.swift; sourceTree = "<group>"; };
+		EBF3A8431E35DDBA0044F9ED /* SecureTextEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextEntryButton.swift; sourceTree = "<group>"; };
+		EBF3A8441E35DDBA0044F9ED /* TaskBackgroundOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskBackgroundOutlineView.swift; sourceTree = "<group>"; };
+		EBF3A8451E35DDBA0044F9ED /* KeepLoggedInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepLoggedInButton.swift; sourceTree = "<group>"; };
+		EBF3A8461E35DDBA0044F9ED /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		EBF3A8471E35DDBA0044F9ED /* VideoPlayerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerSlider.swift; sourceTree = "<group>"; };
+		EBF3A8591E35DDD80044F9ED /* DailyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTask.swift; sourceTree = "<group>"; };
+		EBF3A85C1E35DDF10044F9ED /* AWSClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSClientManager.swift; sourceTree = "<group>"; };
+		EBF3A85F1E35DE010044F9ED /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		EBF3A8601E35DE010044F9ED /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EBF3A8641E35DE100044F9ED /* SwiftAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlertView.swift; sourceTree = "<group>"; };
+		EBF3A8651E35DE100044F9ED /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		EBF3A8661E35DE100044F9ED /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		EBF3A86A1E35DFBE0044F9ED /* AWSMobileHubClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileHubClientManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,14 +279,14 @@
 		EBEBF5CC1E2878DB0082C029 /* LEDA_MobileHub */ = {
 			isa = PBXGroup;
 			children = (
+				EBF3A8591E35DDD80044F9ED /* DailyTask.swift */,
+				EBF3A8631E35DE050044F9ED /* External */,
+				EBF3A85E1E35DDF60044F9ED /* Utils */,
+				EBF3A85B1E35DDE80044F9ED /* Service */,
+				EBF3A8341E35DD750044F9ED /* Views */,
 				EBEBF6021E287B760082C029 /* AmazonAws */,
-				EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */,
-				EBEBF5CF1E2878DB0082C029 /* ViewController.swift */,
-				EBEBF5D11E2878DB0082C029 /* Main.storyboard */,
-				EBEBF5D41E2878DB0082C029 /* Assets.xcassets */,
-				EBEBF5D61E2878DB0082C029 /* LaunchScreen.storyboard */,
-				EBEBF5D91E2878DB0082C029 /* Info.plist */,
-				EBEBF6181E288C7C0082C029 /* SignInViewController.swift */,
+				EBF3A8051E35CFB60044F9ED /* View Controllers */,
+				EBF3A7EA1E35CECE0044F9ED /* Supporting Files */,
 			);
 			path = LEDA_MobileHub;
 			sourceTree = "<group>";
@@ -245,6 +365,146 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EBF3A7EA1E35CECE0044F9ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */,
+				EBEBF5CF1E2878DB0082C029 /* ViewController.swift */,
+				EBEBF5D11E2878DB0082C029 /* Proj_Main.storyboard */,
+				EBEBF6181E288C7C0082C029 /* SignInViewController.swift */,
+				EBEBF5D41E2878DB0082C029 /* Assets.xcassets */,
+				EBEBF5D91E2878DB0082C029 /* Info.plist */,
+				EBF3A7EE1E35CF0B0044F9ED /* Gifs */,
+				EBF3A7ED1E35CF050044F9ED /* Fonts */,
+				EBF3A7EB1E35CEF50044F9ED /* Breathe-02.mov */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBF3A7ED1E35CF050044F9ED /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A7EF1E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Medium.otf */,
+				EBF3A7F01E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Regular.otf */,
+				EBF3A7F11E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Bold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EBF3A7EE1E35CF0B0044F9ED /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A7F51E35CF270044F9ED /* Coffee.gif */,
+				EBF3A7F61E35CF270044F9ED /* Coffee2x.gif */,
+				EBF3A7F71E35CF270044F9ED /* Music.gif */,
+				EBF3A7F81E35CF270044F9ED /* Music2x.gif */,
+				EBF3A7F91E35CF270044F9ED /* Park.gif */,
+				EBF3A7FA1E35CF270044F9ED /* Park2x.gif */,
+				EBF3A7FB1E35CF270044F9ED /* Reading.gif */,
+				EBF3A7FC1E35CF270044F9ED /* Reading2x.gif */,
+			);
+			name = Gifs;
+			sourceTree = "<group>";
+		};
+		EBF3A8051E35CFB60044F9ED /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A8061E35DC700044F9ED /* DailyGoalViewController.swift */,
+				EBF3A8071E35DC700044F9ED /* DailyTasksViewController.swift */,
+				EBF3A8081E35DC700044F9ED /* AccountViewController.swift */,
+				EBF3A8091E35DC700044F9ED /* ProgressViewController.swift */,
+				EBF3A80A1E35DC700044F9ED /* WeekviewViewController.swift */,
+				EBF3A80B1E35DC700044F9ED /* WeekviewTasksViewController.swift */,
+				EBF3A80C1E35DC700044F9ED /* LoginViewController.swift */,
+				EBF3A80D1E35DC700044F9ED /* QuizViewController.swift */,
+				EBF3A80E1E35DC700044F9ED /* QuizResultViewController.swift */,
+				EBF3A80F1E35DC700044F9ED /* EditDetailsViewController.swift */,
+				EBF3A8101E35DC700044F9ED /* PrivacyViewController.swift */,
+				EBF3A8111E35DC700044F9ED /* TermsViewController.swift */,
+				EBF3A8121E35DC700044F9ED /* DailyGoalCheckListViewController.swift */,
+				EBF3A8131E35DC700044F9ED /* GiveRatingViewController.swift */,
+				EBF3A8141E35DC700044F9ED /* SubmitRatingViewController.swift */,
+				EBF3A8151E35DC700044F9ED /* ForgotViewController.swift */,
+				EBF3A8161E35DC700044F9ED /* HelpNavigationViewController.swift */,
+				EBF3A8171E35DC700044F9ED /* HelpViewController.swift */,
+				EBF3A8181E35DC700044F9ED /* SideMenuTableViewController.swift */,
+				EBF3A8191E35DC700044F9ED /* CountdownViewController.swift */,
+				EBF3A81A1E35DC700044F9ED /* CustomVideoPlayerViewController.swift */,
+				EBF3A81B1E35DC700044F9ED /* HowToViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EBF3A8341E35DD750044F9ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A8361E35DDA00044F9ED /* Custom Views */,
+				EBF3A8351E35DD7D0044F9ED /* Storyboards */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EBF3A8351E35DD7D0044F9ED /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A7E81E35CE430044F9ED /* Main.storyboard */,
+				EBF3A8321E35DCAF0044F9ED /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		EBF3A8361E35DDA00044F9ED /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A8371E35DDBA0044F9ED /* VideoPlayerView.swift */,
+				EBF3A8381E35DDBA0044F9ED /* VideosCollectionViewCell.swift */,
+				EBF3A8391E35DDBA0044F9ED /* WeekviewTableViewCell.swift */,
+				EBF3A83A1E35DDBA0044F9ED /* WeekviewTaskTableViewCell.swift */,
+				EBF3A83B1E35DDBA0044F9ED /* TestResultsTableViewCell.swift */,
+				EBF3A83C1E35DDBA0044F9ED /* QuizResultButton.swift */,
+				EBF3A83D1E35DDBA0044F9ED /* HelpTableViewCell.swift */,
+				EBF3A83E1E35DDBA0044F9ED /* DailyGoalCheckListTableViewCell.swift */,
+				EBF3A83F1E35DDBA0044F9ED /* RatingControl.swift */,
+				EBF3A8401E35DDBA0044F9ED /* TaskWhiteBgView.swift */,
+				EBF3A8411E35DDBA0044F9ED /* Marker3.swift */,
+				EBF3A8421E35DDBA0044F9ED /* Marker3View.swift */,
+				EBF3A8431E35DDBA0044F9ED /* SecureTextEntryButton.swift */,
+				EBF3A8441E35DDBA0044F9ED /* TaskBackgroundOutlineView.swift */,
+				EBF3A8451E35DDBA0044F9ED /* KeepLoggedInButton.swift */,
+				EBF3A8461E35DDBA0044F9ED /* SideMenuTableViewCell.swift */,
+				EBF3A8471E35DDBA0044F9ED /* VideoPlayerSlider.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		EBF3A85B1E35DDE80044F9ED /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A85C1E35DDF10044F9ED /* AWSClientManager.swift */,
+				EBF3A86A1E35DFBE0044F9ED /* AWSMobileHubClientManager.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		EBF3A85E1E35DDF60044F9ED /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A85F1E35DE010044F9ED /* Helper.swift */,
+				EBF3A8601E35DE010044F9ED /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		EBF3A8631E35DE050044F9ED /* External */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3A8641E35DE100044F9ED /* SwiftAlertView.swift */,
+				EBF3A8651E35DE100044F9ED /* KeychainSwiftDistrib.swift */,
+				EBF3A8661E35DE100044F9ED /* PopAnimator.swift */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,12 +570,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF3A7EC1E35CEF50044F9ED /* Breathe-02.mov in Resources */,
+				EBF3A8021E35CF270044F9ED /* Park2x.gif in Resources */,
+				EBF3A7E91E35CE430044F9ED /* Main.storyboard in Resources */,
+				EBF3A8031E35CF270044F9ED /* Reading.gif in Resources */,
+				EBF3A7FE1E35CF270044F9ED /* Coffee2x.gif in Resources */,
 				EBEBF5F21E287AF70082C029 /* NOTICE in Resources */,
-				EBEBF5D81E2878DB0082C029 /* LaunchScreen.storyboard in Resources */,
+				EBF3A8331E35DCAF0044F9ED /* LaunchScreen.storyboard in Resources */,
+				EBF3A7F41E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Bold.otf in Resources */,
+				EBF3A7FF1E35CF270044F9ED /* Music.gif in Resources */,
 				EBEBF5D51E2878DB0082C029 /* Assets.xcassets in Resources */,
-				EBEBF5D31E2878DB0082C029 /* Main.storyboard in Resources */,
+				EBF3A7FD1E35CF270044F9ED /* Coffee.gif in Resources */,
+				EBEBF5D31E2878DB0082C029 /* Proj_Main.storyboard in Resources */,
+				EBF3A8011E35CF270044F9ED /* Park.gif in Resources */,
+				EBF3A7F21E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Medium.otf in Resources */,
+				EBF3A7F31E35CF1A0044F9ED /* Radomir Tinkov - Gilroy-Regular.otf in Resources */,
 				EBEBF5F31E287AF70082C029 /* CheckXcodeVersion.sh in Resources */,
 				EBEBF5F01E287AF70082C029 /* Amazon_Software_License.txt in Resources */,
+				EBF3A8041E35CF270044F9ED /* Reading2x.gif in Resources */,
+				EBF3A8001E35CF270044F9ED /* Music2x.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,37 +660,76 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF3A8281E35DC710044F9ED /* DailyGoalCheckListViewController.swift in Sources */,
+				EBF3A8221E35DC700044F9ED /* LoginViewController.swift in Sources */,
+				EBF3A82B1E35DC710044F9ED /* ForgotViewController.swift in Sources */,
+				EBF3A8481E35DDBA0044F9ED /* VideoPlayerView.swift in Sources */,
+				EBF3A8311E35DC710044F9ED /* HowToViewController.swift in Sources */,
+				EBF3A81F1E35DC700044F9ED /* ProgressViewController.swift in Sources */,
 				EBE64CB01E304BCE0006D5E0 /* Goals.swift in Sources */,
+				EBF3A8681E35DE100044F9ED /* KeychainSwiftDistrib.swift in Sources */,
+				EBF3A84B1E35DDBA0044F9ED /* WeekviewTaskTableViewCell.swift in Sources */,
 				EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */,
+				EBF3A81E1E35DC700044F9ED /* AccountViewController.swift in Sources */,
+				EBF3A82A1E35DC710044F9ED /* SubmitRatingViewController.swift in Sources */,
 				EBEBF5D01E2878DB0082C029 /* ViewController.swift in Sources */,
 				EBEBF60A1E287B760082C029 /* AWSConfiguration.swift in Sources */,
+				EBF3A84A1E35DDBA0044F9ED /* WeekviewTableViewCell.swift in Sources */,
+				EBF3A84E1E35DDBA0044F9ED /* HelpTableViewCell.swift in Sources */,
 				EBE64CB11E304BCE0006D5E0 /* Tasks.swift in Sources */,
+				EBF3A8231E35DC700044F9ED /* QuizViewController.swift in Sources */,
+				EBF3A81C1E35DC700044F9ED /* DailyGoalViewController.swift in Sources */,
+				EBF3A8671E35DE100044F9ED /* SwiftAlertView.swift in Sources */,
+				EBF3A85D1E35DDF10044F9ED /* AWSClientManager.swift in Sources */,
+				EBF3A8541E35DDBA0044F9ED /* SecureTextEntryButton.swift in Sources */,
+				EBF3A81D1E35DC700044F9ED /* DailyTasksViewController.swift in Sources */,
+				EBF3A84C1E35DDBA0044F9ED /* TestResultsTableViewCell.swift in Sources */,
+				EBF3A8581E35DDBA0044F9ED /* VideoPlayerSlider.swift in Sources */,
+				EBF3A8261E35DC710044F9ED /* PrivacyViewController.swift in Sources */,
 				EBE64CB41E304BCE0006D5E0 /* UserToolStatus.swift in Sources */,
 				EBEBF60B1E287B760082C029 /* AWSMobileClient.swift in Sources */,
+				EBF3A86B1E35DFBE0044F9ED /* AWSMobileHubClientManager.swift in Sources */,
 				EBE64CB21E304BCE0006D5E0 /* UserAnalytics.swift in Sources */,
+				EBF3A8551E35DDBA0044F9ED /* TaskBackgroundOutlineView.swift in Sources */,
+				EBF3A8511E35DDBA0044F9ED /* TaskWhiteBgView.swift in Sources */,
+				EBF3A8271E35DC710044F9ED /* TermsViewController.swift in Sources */,
+				EBF3A82F1E35DC710044F9ED /* CountdownViewController.swift in Sources */,
+				EBF3A82E1E35DC710044F9ED /* SideMenuTableViewController.swift in Sources */,
 				EBE64CAF1E304BCE0006D5E0 /* Days.swift in Sources */,
+				EBF3A8611E35DE010044F9ED /* Helper.swift in Sources */,
+				EBF3A8501E35DDBA0044F9ED /* RatingControl.swift in Sources */,
+				EBF3A8201E35DC700044F9ED /* WeekviewViewController.swift in Sources */,
+				EBF3A8241E35DC700044F9ED /* QuizResultViewController.swift in Sources */,
 				EBEBF5CE1E2878DB0082C029 /* AppDelegate.swift in Sources */,
+				EBF3A8531E35DDBA0044F9ED /* Marker3View.swift in Sources */,
 				EBE64CB31E304BCE0006D5E0 /* UserTaskStatus.swift in Sources */,
+				EBF3A8291E35DC710044F9ED /* GiveRatingViewController.swift in Sources */,
+				EBF3A82C1E35DC710044F9ED /* HelpNavigationViewController.swift in Sources */,
+				EBF3A8571E35DDBA0044F9ED /* SideMenuTableViewCell.swift in Sources */,
+				EBF3A84F1E35DDBA0044F9ED /* DailyGoalCheckListTableViewCell.swift in Sources */,
+				EBF3A8691E35DE100044F9ED /* PopAnimator.swift in Sources */,
+				EBF3A8521E35DDBA0044F9ED /* Marker3.swift in Sources */,
+				EBF3A8491E35DDBA0044F9ED /* VideosCollectionViewCell.swift in Sources */,
+				EBF3A8211E35DC700044F9ED /* WeekviewTasksViewController.swift in Sources */,
+				EBF3A8251E35DC710044F9ED /* EditDetailsViewController.swift in Sources */,
+				EBF3A8301E35DC710044F9ED /* CustomVideoPlayerViewController.swift in Sources */,
+				EBF3A8561E35DDBA0044F9ED /* KeepLoggedInButton.swift in Sources */,
+				EBF3A85A1E35DDD80044F9ED /* DailyTask.swift in Sources */,
+				EBF3A82D1E35DC710044F9ED /* HelpViewController.swift in Sources */,
+				EBF3A84D1E35DDBA0044F9ED /* QuizResultButton.swift in Sources */,
+				EBF3A8621E35DE010044F9ED /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EBEBF5D11E2878DB0082C029 /* Main.storyboard */ = {
+		EBEBF5D11E2878DB0082C029 /* Proj_Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EBEBF5D21E2878DB0082C029 /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EBEBF5D61E2878DB0082C029 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBEBF5D71E2878DB0082C029 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Proj_Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

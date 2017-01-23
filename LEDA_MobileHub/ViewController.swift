@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func insert(_ sender: Any) {
         
-        scanTasks(startContent: 0, endContent: 3)
+        logout()
     }
     
     func logout() {
@@ -238,7 +238,7 @@ class ViewController: UIViewController {
             
             print("✅ present sign in vc")
             DispatchQueue.main.async {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let storyboard = UIStoryboard(name: "Proj_Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
                 self.present(vc, animated: false, completion: nil)
             }
