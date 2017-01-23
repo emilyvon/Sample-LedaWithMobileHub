@@ -15,7 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var didSignInObserver: AnyObject!
+//    var didSignInObserver: AnyObject!
     
     var passwordAuthenticationCompletion: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>?
     
@@ -25,18 +25,18 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        didSignInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.defaultIdentityManager(), queue: OperationQueue.main, using: { (notification: Notification) in
-            // perform successful login actions here
-            
-            print("perform successful login actions here ✅")
-            
-        })
+//        didSignInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.defaultIdentityManager(), queue: OperationQueue.main, using: { (notification: Notification) in
+//            // perform successful login actions here
+//            
+//            print("perform successful login actions here ✅")
+//            
+//        })
         
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(didSignInObserver)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(didSignInObserver)
+//    }
     
     @IBAction func signInBtnPressed(_ sender: Any) {
         
@@ -44,26 +44,18 @@ class SignInViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
         
         AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider) { (result: Any?, error: Error?) in
             DispatchQueue.main.async {
-            if error == nil {
-                // handle successful login
-                
-                print("handle successful login ✅")
-                self.dismiss(animated: true, completion: nil)
-                
-            }
-            print("❗️ Login with signin provider result = \(result), error = \(error)")
+                if error == nil {
+                    // handle successful login
+                    
+                    print("handle successful login ✅")
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }
+                print("❗️ Login with signin provider result = \(result), error = \(error?.localizedDescription)")
             }
             
         }

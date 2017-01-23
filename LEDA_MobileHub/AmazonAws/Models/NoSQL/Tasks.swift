@@ -17,15 +17,14 @@ import AWSDynamoDB
 
 class Tasks: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
-    var _contentDay: NSNumber?
+    var _taskDay: NSNumber?
     var _sort: NSNumber?
-    var _durationSeconds: NSNumber?
     var _taskCategory: String?
     var _taskData: [String: Any]?
+    var _taskDurationSeconds: NSNumber?
     var _taskSubcategory: String?
     var _taskTitle: String?
     var _taskType: String?
-    
     
     class func dynamoDBTableName() -> String {
         
@@ -34,7 +33,7 @@ class Tasks: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     class func hashKeyAttribute() -> String {
         
-        return "_contentDay"
+        return "_taskDay"
     }
     
     class func rangeKeyAttribute() -> String {
@@ -44,14 +43,15 @@ class Tasks: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
-            "_contentDay" : "content_day",
+            "_taskDay" : "task_day",
             "_sort" : "sort",
-            "_durationSeconds" : "duration_seconds",
             "_taskCategory" : "task_category",
             "_taskData" : "task_data",
+            "_taskDurationSeconds" : "task_duration_seconds",
             "_taskSubcategory" : "task_subcategory",
             "_taskTitle" : "task_title",
             "_taskType" : "task_type",
+
         ]
     }
 }

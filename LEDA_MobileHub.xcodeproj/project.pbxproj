@@ -45,6 +45,7 @@
 		EBEBF6111E287BB50082C029 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6101E287BB50082C029 /* libz.tbd */; };
 		EBEBF6131E287BBC0082C029 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */; };
 		EBEBF6191E288C7C0082C029 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBF6181E288C7C0082C029 /* SignInViewController.swift */; };
+		EC724BD6EB0196E0B9C73392 /* Pods_LEDA_MobileHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D2D6BB0E9317044E3079C /* Pods_LEDA_MobileHub.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		280D2D6BB0E9317044E3079C /* Pods_LEDA_MobileHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEDA_MobileHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C44656BEC0BD6B35C47BBE2 /* Pods-LEDA_MobileHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDA_MobileHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDA_MobileHub/Pods-LEDA_MobileHub.release.xcconfig"; sourceTree = "<group>"; };
+		A5ED13322078F5821217FB9A /* Pods-LEDA_MobileHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDA_MobileHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDA_MobileHub/Pods-LEDA_MobileHub.debug.xcconfig"; sourceTree = "<group>"; };
 		EBE64CA91E304BCE0006D5E0 /* Days.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
 		EBE64CAA1E304BCE0006D5E0 /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		EBE64CAB1E304BCE0006D5E0 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
@@ -117,12 +121,22 @@
 				EBEBF5ED1E287AF70082C029 /* AWSDynamoDB.framework in Frameworks */,
 				EBEBF5EC1E287AF70082C029 /* AWSCore.framework in Frameworks */,
 				EBEBF5EF1E287AF70082C029 /* AWSS3.framework in Frameworks */,
+				EC724BD6EB0196E0B9C73392 /* Pods_LEDA_MobileHub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4822E49B6D68D89C951CE2E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5ED13322078F5821217FB9A /* Pods-LEDA_MobileHub.debug.xcconfig */,
+				3C44656BEC0BD6B35C47BBE2 /* Pods-LEDA_MobileHub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EBEBF5C11E2878DB0082C029 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +144,7 @@
 				EBEBF5CC1E2878DB0082C029 /* LEDA_MobileHub */,
 				EBEBF5CB1E2878DB0082C029 /* Products */,
 				EBEBF60F1E287BB50082C029 /* Frameworks */,
+				4822E49B6D68D89C951CE2E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +240,7 @@
 			children = (
 				EBEBF6121E287BBC0082C029 /* libsqlite3.tbd */,
 				EBEBF6101E287BB50082C029 /* libz.tbd */,
+				280D2D6BB0E9317044E3079C /* Pods_LEDA_MobileHub.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,11 +252,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBEBF5DC1E2878DB0082C029 /* Build configuration list for PBXNativeTarget "LEDA_MobileHub" */;
 			buildPhases = (
+				268C66C20DDCB66D88D1DC07 /* [CP] Check Pods Manifest.lock */,
 				EBEBF5C61E2878DB0082C029 /* Sources */,
 				EBEBF5C71E2878DB0082C029 /* Frameworks */,
 				EBEBF5C81E2878DB0082C029 /* Resources */,
 				EBEBF6001E287B310082C029 /* Embed Frameworks */,
 				EBEBF6011E287B620082C029 /* ShellScript */,
+				DD88A21401DBDDA6696F995E /* [CP] Embed Pods Frameworks */,
+				76410C2C52FF417601DC3012 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +322,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		268C66C20DDCB66D88D1DC07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		76410C2C52FF417601DC3012 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDA_MobileHub/Pods-LEDA_MobileHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD88A21401DBDDA6696F995E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDA_MobileHub/Pods-LEDA_MobileHub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EBEBF6011E287B620082C029 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +516,7 @@
 		};
 		EBEBF5DD1E2878DB0082C029 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5ED13322078F5821217FB9A /* Pods-LEDA_MobileHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DYS8T9C648;
@@ -472,6 +537,7 @@
 		};
 		EBEBF5DE1E2878DB0082C029 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C44656BEC0BD6B35C47BBE2 /* Pods-LEDA_MobileHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DYS8T9C648;

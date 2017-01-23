@@ -1,0 +1,18 @@
+PODS:
+  - JWTDecode (2.0.0)
+  - SideMenu (2.1.5)
+  - SwiftGifOrigin (1.6.1)
+
+DEPENDENCIES:
+  - JWTDecode
+  - SideMenu
+  - SwiftGifOrigin (~> 1.6.1)
+
+SPEC CHECKSUMS:
+  JWTDecode: 178e47e5d28d3abcff778bacced8342858cd6cb5
+  SideMenu: bcd2d7b7d4395af088e213cebd11c3ac7d958f5a
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+
+PODFILE CHECKSUM: 1e1bfb5ab9463185371b777c3e41a01f66c54ec8
+
+COCOAPODS: 1.1.1

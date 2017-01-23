@@ -1,0 +1,6 @@
+framework module Pods_LEDA_MobileHub {
+  umbrella header "Pods-LEDA_MobileHub-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -87,7 +87,7 @@ class AWSMobileClient: NSObject {
         if (!isInitialized) {
             
             AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: { (result: Any?, error: Error?) in
-                print("❗️ Result: \(result) \n Error:\(error)")
+                print("❗️ Result: \(result) \n Error:\(error?.localizedDescription)")
             })
             
             /*AWSIdentityManager.defaultIdentityManager().resumeSessionWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
@@ -104,7 +104,7 @@ class AWSMobileClient: NSObject {
     
     func setupUserPool() {
         
-        print("❗️setupUserPool")
+        print("✅ setupUserPool")
         
         // register your user pool configuration
         AWSCognitoUserPoolsSignInProvider.setupUserPool(withId: AWSCognitoUserPoolId, cognitoIdentityUserPoolAppClientId: AWSCognitoUserPoolAppClientId, cognitoIdentityUserPoolAppClientSecret: AWSCognitoUserPoolClientSecret, region: AWSCognitoUserPoolRegion)

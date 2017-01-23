@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func insert(_ sender: Any) {
         
-        logout()
+        scanTasks(startContent: 0, endContent: 3)
     }
     
     func logout() {
@@ -155,10 +155,10 @@ class ViewController: UIViewController {
 
         let exp = AWSDynamoDBQueryExpression()
         
-        exp.keyConditionExpression = "#content_day = :content_day"
-        exp.expressionAttributeNames = ["#content_day": "content_day"]
-        exp.expressionAttributeValues = [":content_day": dayNo]
-        exp.projectionExpression = "content_day,sort,duration_seconds,task_title,task_type,task_data,task_category,task_subcategory"
+        exp.keyConditionExpression = "#task_day = :task_day"
+        exp.expressionAttributeNames = ["#task_day": "task_day"]
+        exp.expressionAttributeValues = [":task_day": dayNo]
+        exp.projectionExpression = "task_day,sort,task_duration_seconds,task_title,task_type,task_data,task_category,task_subcategory"
         
         mapper.query(Tasks.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async {
@@ -209,9 +209,9 @@ class ViewController: UIViewController {
         let mapper = AWSDynamoDBObjectMapper.default()
         let exp = AWSDynamoDBScanExpression()
         
-        exp.filterExpression = "content_day between :start_day and :end_day"
+        exp.filterExpression = "task_day between :start_day and :end_day"
         exp.expressionAttributeValues = [":start_day": startNo, ":end_day": endNo]
-        exp.projectionExpression = "content_day,sort,duration_seconds,task_title,task_type,task_data"
+        exp.projectionExpression = "task_day,sort,task_duration_seconds,task_title,task_type,task_data,task_category,task_subcategory"
         
         mapper.scan(Tasks.self, expression: exp) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async {
@@ -236,7 +236,7 @@ class ViewController: UIViewController {
         if !AWSIdentityManager.defaultIdentityManager().isLoggedIn {
             
             
-            print("❗️present sign in vc")
+            print("✅ present sign in vc")
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
