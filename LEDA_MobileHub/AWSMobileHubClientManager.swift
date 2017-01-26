@@ -432,7 +432,6 @@ class AWSMobileHubClientManager {
                     print("queryUserTaskStatus ✅ \(items)")
                     
                     
-                    
                     completion()
                 }
             }

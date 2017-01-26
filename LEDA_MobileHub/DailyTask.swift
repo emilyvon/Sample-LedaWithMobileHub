@@ -328,7 +328,9 @@ struct AttemptItem {
         self.isComplete = isComplete
         self.rating = rating
         self.adjective = adjective
-        
+        self.answers = answers
+        self.result = result
+        self.items = items
     }
 }
 
