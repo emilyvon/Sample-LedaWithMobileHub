@@ -26,8 +26,8 @@ class WeekviewTasksViewController: UIViewController {
     //========================================
     // MARK: - Properties
     //========================================
-//    var pool: AWSCognitoIdentityUserPool?
-//    var user: AWSCognitoIdentityUser?
+    //    var pool: AWSCognitoIdentityUserPool?
+    //    var user: AWSCognitoIdentityUser?
     
     var timer = Timer()
     
@@ -66,38 +66,48 @@ class WeekviewTasksViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(presentLoginVC), name: NSNotification.Name("NC_LogoutAndDismiss"), object: nil)
         
-        // check token and db before initData
-//        checkTokenAndDb()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNewDataAfterSignedIn), name: NSNotification.Name("AWSIdentityManagerResumeSession"), object: nil)
         
-        if AWSIdentityManager.defaultIdentityManager().isLoggedIn {
-            updateNewDataAfterSignedIn()
-        }        
+        // check token and db before initData
+        //        checkTokenAndDb()
+        
+        //        if AWSIdentityManager.defaultIdentityManager().isLoggedIn {
+        //            updateNewDataAfterSignedIn()
+        //        }
     }
     
     func updateNewDataAfterSignedIn() {
+        print("updateNewDataAfterSignedIn ❗️")
         
         initData {
-
+            
+            
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
             
             self.tableView.scrollToRow(at: IndexPath(row: self.activeTaskIndexInTableView, section: 0), at: UITableViewScrollPosition.middle, animated: false)
             
             self.showLoadingScreen(shouldShow: false)
-
-//            self.getCurrentTask()
+            
+            
             
         }
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // show loading screen if it is coming from login screen, now viewDidLoad
-        if Helper.shared.isLoggedIn {
-            showLoadingScreen(shouldShow: true)
-            Helper.shared.isLoggedIn = false
-        }
+        /*
+         // show loading screen if it is coming from login screen, now viewDidLoad
+         if Helper.shared.isLoggedIn {
+         showLoadingScreen(shouldShow: true)
+         Helper.shared.isLoggedIn = false
+         }
+         */
         
         presentSignInViewController()
     }
@@ -114,10 +124,9 @@ class WeekviewTasksViewController: UIViewController {
                 let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.present(vc, animated: false, completion: nil)
             }
-            
         }
-        
     }
+    
     
     func presentLoginVC() {
         print("presentLoginVC() ❗️")
@@ -132,163 +141,14 @@ class WeekviewTasksViewController: UIViewController {
             self.tableView.endUpdates()
         }
         
-        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
         self.present(vc, animated: true, completion: nil)
-        
-        
     }
     
-    func checkTokenAndDb() {
-        
-        if Helper.shared.isTokenValid() {
-            print("✅ token valid")
-            print("✅ display tasks")
-            
-            if AWSClientManager.shared.isDbRegisterd() {
-                print("token valid & db registered ❗️")
-                
-                initData {
-//                    DispatchQueue.main.async {
-                    self.showLoadingScreen(shouldShow: false)
-//                    self.getCurrentTask()
-                    
-//                    }
-                }
-                
-            } else {
-                print("token valid & db NOT registered ❗️")
-                if let sessionToken = KeychainSwift().get(KC_SESSION_TOKEN) {
-                    
-                    AWSClientManager.shared.registerDynamoDB(withToken: sessionToken) {
-                        
-                        self.initData {
-//                            DispatchQueue.main.async {
-                            self.showLoadingScreen(shouldShow: false)
-//                            self.getCurrentTask()
-//                            }
-                        }
-                        
-                    }
-                }
-            }
-            
-            
-        } else {
-            print("❌ token NOT valid")
-            print("❌ sign in and get token")
-            
-            if let keptLoggedIn = UserDefaults.standard.object(forKey: UD_USER_KEEP_LOGGED_IN) as? Bool {
-                
-                if keptLoggedIn {
-                    print("auto login")
-                    if let kc_user_email = KeychainSwift().get(KC_USER_EMAIL), let kc_user_password = KeychainSwift().get(KC_USER_PASSWORD) {
-                        AWSClientManager.shared.signInUser(name: kc_user_email, password: kc_user_password, completion: { (result) in
-                            if result {
-                                
-                                print("auto signed in ✅")
-                                // display data
-                                self.initData {
-//                                    DispatchQueue.main.async {
-                                    self.showLoadingScreen(shouldShow: false)
-//                                    self.getCurrentTask()
-//                                    }
-                                }
-                                
-                            } else {
-                                self.showLoginVC()
-                            }
-                        })
-                    } else {
-                        showLoginVC()
-                    }
-                    
-                }
-                else {
-                    print("don't auto login")
-                    showLoginVC()
-                    
-                }
-                
-            } else {
-                print("don't auto login")
-                showLoginVC()
-                
-            }
-        }
-        
-        
-    }
     
     @IBAction func testing(_ sender: Any) {
         print("testing")
-        
-        
-        AWSMobileHubClientManager.shared.scanTasks(startContent: 0, endContent: 4)
-        
-        //        AWSClientManager.shared.queryUserAnalytics { (ana) in
-        //            print(ana.daysInARow)
-        //        }
-        
-        //        let db = AWSDynamoDB(forKey: "ledaDB")
-        //
-        //        print(db.configuration.userAgent)
-        //        print(db.configuration.credentialsProvider.debugDescription!)
-        //        db.configuration.credentialsProvider.credentials().continue({ (credentials: AWSTask<AWSCredentials>) -> Any? in
-        //            if let err = credentials.error {
-        //                print("err ❌ \(err)")
-        //            } else {
-        //                print(credentials.result.customMirror)
-        //            }
-        //            return nil
-        //        })
-        
-        
-        //        if AWSServiceManager.default().defaultServiceConfiguration == nil {
-        //            print("manager if nil")
-        //        } else {
-        //            print("manager not nil")
-        //        }
-        /*
-         let result = Helper.shared.isTokenValid()
-         
-         
-         let db = AWSDynamoDB(forKey: "ledaDB")
-         if let _ = db.configuration.userAgent {
-         
-         print("ledaDB registered")
-         
-         AWSClientManager.shared.queryUserAnalytics(completion: { (ana) in
-         print(ana.daysInARow)
-         })
-         
-         } else {
-         
-         print("ledaDB NOT registered")
-         
-         if let sessionToken = KeychainSwift().get(KC_SESSION_TOKEN) {
-         
-         AWSClientManager.shared.registerDynamoDB(withToken: sessionToken) {
-         AWSClientManager.shared.queryUserAnalytics(completion: { (analytics) in
-         print(analytics.daysInARow)
-         
-         })
-         }
-         
-         
-         }
-         
-         }
-         */
-        
-        /*
-        if let taskNoArr = UserDefaults.standard.object(forKey: UD_USER_DATA_TASKS_ARRAY) as? [Int], let weekdayArr = UserDefaults.standard.object(forKey: UD_USER_DATA_WEEKDAYS_ARRAY) as? [Int] {
-            
-            print("taskNoArr: \(taskNoArr), \nweekdayArr: \(weekdayArr)")
-            
-        }
-        */
         
         
     }
@@ -297,31 +157,99 @@ class WeekviewTasksViewController: UIViewController {
     // MARK: - Set up tableView
     //========================================
     
-    func setupCurrentActiveTask(withIndex num: Int, completion: ()->()) {
+    func setupCurrentActiveTask(withIndex num: Int, completion: @escaping ()->()) {
         print("WeekviewTasksVC : setupCurrentActiveTask ❗️")
-        guard let weekdayArr = Helper.shared.getWeekdayArr(), let taskNoArr = Helper.shared.getTasksArr(daysInRow: num) else { return }
         
-        var i = 0
-        
-        for item in taskNoArr {
-            
-            if item == num {
-                if weekdayArr[i] != 7 && weekdayArr[i] != 1 {
-                    activeTaskIndexInTableView = i
-                }
-            }
-            
-            i += 1
+        guard let weekdayArr = Helper.shared.getWeekdayArr(), let taskNoArr = Helper.shared.getTasksArr() else {
+            print("setupCurrentActiveTask ❌")
+            return
         }
         
         
-        currentSelectedCell = activeTaskIndexInTableView
-        previousSelectedCell = activeTaskIndexInTableView
-        isSameSelectedCell = false
-        print("activeTaskIndexInTableView: \(activeTaskIndexInTableView)")
         
-        completion()
+//        var wdArr = weekdayArr
+//        var tnArr = taskNoArr
+        
+//        AWSMobileHubClientManager.shared.getUserPoolDetail {
+//            if let custom = KeychainSwift().get(KC_CUSTOM_START_DATE) {
+//                let current = Helper.shared.getCurrentDateStr()
+//                if let diff = Helper.shared.getNumOfDaysBetweenTwoDates(date1Str: current, date2Str: custom) {
+//                    if diff > 6 {
+//                        if wdArr[0] == 7 {
+//                            wdArr.removeFirst()
+//                            wdArr.removeFirst()
+//                            wdArr.append(7)
+//                            wdArr.append(1)
+//                            
+//                            tnArr.removeFirst()
+//                            tnArr.removeFirst()
+//                            tnArr.append(-1)
+//                            tnArr.append(-1)
+//                            
+//                        } else if wdArr[0] == 1 {
+//                            wdArr.removeFirst()
+//                            wdArr.append(1)
+//                            
+//                            tnArr.removeFirst()
+//                            tnArr.append(-1)
+//                        }
+//                    }
+//                    
+//                    print("wdArr ✅ \(wdArr)")
+//                    UserDefaults.standard.set(wdArr, forKey: UD_USER_DATA_WEEKDAYS_ARRAY)
+//                    UserDefaults.standard.set(tnArr, forKey: UD_USER_DATA_TASKS_ARRAY)
+//                    
+//                    var i = 0
+//                    
+//                    for item in tnArr {
+//                        
+//                        if item == num {
+//                            if wdArr[i] != 7 && wdArr[i] != 1 {
+//                                self.activeTaskIndexInTableView = i
+//                            }
+//                        }
+//                        
+//                        i += 1
+//                    }
+//                    
+//                    
+//                    self.currentSelectedCell = self.activeTaskIndexInTableView
+//                    self.previousSelectedCell = self.activeTaskIndexInTableView
+//                    self.isSameSelectedCell = false
+//                    print("activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
+//                    
+//                    completion()
+//                    
+//                }
+//            }
+//        }
+        
+        
+        
+                var i = 0
+        
+                for item in taskNoArr {
+        
+                    if item == num {
+                        if weekdayArr[i] != 7 && weekdayArr[i] != 1 {
+                            self.activeTaskIndexInTableView = i
+                        }
+                    }
+        
+                    i += 1
+                }
+        
+        
+                self.currentSelectedCell = self.activeTaskIndexInTableView
+                self.previousSelectedCell = self.activeTaskIndexInTableView
+                self.isSameSelectedCell = false
+                print("activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
+        
+                completion()
+        
     }
+    
+    
     
     func setupTableView() {
         print("WeekviewTasksVC : setupTableView ❗️")
@@ -330,44 +258,30 @@ class WeekviewTasksViewController: UIViewController {
         tableView.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0)
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorStyle = .none
-        
     }
     
     
     func initData(completion: @escaping ()->()) {
         print("WeekviewTasksVC : initData ❗️")
         // query daysInRow from db
-//        AWSClientManager.shared.queryUserAnalytics(completion: { (ana) in
-//            print(ana.daysInARow)
+        
         AWSMobileHubClientManager.shared.queryUserAnalytics {
             
-        
-            let currentDaysInRowInt = Int(KeychainSwift().get(KC_ANALYTICS_CURRENT_DAYS_IN_ROW)!)!
+            let maxDaysInRowInt = Int(KeychainSwift().get(KC_ANALYTICS_MAX_DAYS_IN_ROW)!)!
             
-            // get task from db/device
-            self.downloadData(startTaskNum: currentDaysInRowInt, endTaskNum: currentDaysInRowInt+4) {
+            AWSMobileHubClientManager.shared.scanTasks(startContent: maxDaysInRowInt, endContent: maxDaysInRowInt+4) {
                 
-                self.setupCurrentActiveTask(withIndex: currentDaysInRowInt) {
+                self.setupCurrentActiveTask(withIndex: maxDaysInRowInt) {
                     DispatchQueue.main.async {
                         self.setupTableView()
-                        print("❗️❗️ ❗️ \(self.activeTaskIndexInTableView)")
+                        print("❗️❗️ ❗️ activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
                         
-//                        AWSClientManager.shared.getUserTask(forTaskday: daysInRowInt, completion: {
-                            completion()
-//                        })
-                    
+                        completion()
                     }
                 }
             }
         }
-//        })
-        
-        
-        
     }
-    
-    
-    
     
     func showLoadingScreen(shouldShow: Bool) {
         
@@ -399,41 +313,7 @@ class WeekviewTasksViewController: UIViewController {
                 loadingDotLabel.text = "."
                 
             }
-            
         }
-        
-    }
-    
-    func showLoginVC() {
-        
-        DispatchQueue.main.async {
-            
-            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            
-            self.present(loginVC, animated: true, completion: nil)
-        }
-    }
-    
-    func downloadData(startTaskNum: Int, endTaskNum: Int, completion: @escaping () -> ()) {
-        print("WeekviewTasksVC : downloadData ✅")
-        
-        if let decoded = UserDefaults.standard.object(forKey: UD_AVAILABLE_TASKS) as? Data, let _ = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [Int: UserContent] {
-            print(" get item from device ❗️ ")
-            print("11 ✅")
-            completion()
-            
-        } else {
-            
-            print(" get item from DB ❗️ ")
-            print("22 ✅")
-            
-            
-            AWSClientManager.shared.getItemFromDB(startTaskNo: startTaskNum, endTaskNo: endTaskNum, completion: { (result: [(key: Int, value: UserContent)]) in
-                
-                completion()
-                
-            })
-        } // END else
     }
 }
 
@@ -450,6 +330,9 @@ extension WeekviewTasksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let taskNoArr = UserDefaults.standard.object(forKey: UD_USER_DATA_TASKS_ARRAY) as? [Int], let weekdayArr = UserDefaults.standard.object(forKey: UD_USER_DATA_WEEKDAYS_ARRAY) as? [Int] {
+            
+//            print("cellForRowAt ✅ taskNoArr: \(taskNoArr), weekdayArr: \(weekdayArr)")
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeekviewCell") as! WeekviewTaskTableViewCell
             cell.selectionStyle = .none
             cell.configureCell(weekdayNo: weekdayArr[indexPath.row], currentActiveTaskNo: activeTaskIndexInTableView, taskNo: taskNoArr[indexPath.row], tableIndex: indexPath.row)

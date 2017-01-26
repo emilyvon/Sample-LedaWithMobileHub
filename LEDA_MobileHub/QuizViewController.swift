@@ -178,7 +178,7 @@ class QuizViewController: UIViewController {
                     // save data to DB
                     if let result = UserData.shared.userTaskResult {
                         print("UserData.shared.userTaskResult 3 ✅")
-                        AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
+//                        AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
                     } else {
                         print("UserData.shared.userTaskResult 3 ❌ \(UserData.shared.userTaskResult)")
                     }

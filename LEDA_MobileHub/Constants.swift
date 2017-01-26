@@ -69,9 +69,6 @@ let USER_ATTRIBUTES_START_DATE = "custom:start_date"
 
 let UD_CURRENT_USER_INFO = "currentUserInfo"
 
-//let UD_CUSTOM_START_DATE = "custom:start_date"
-let KC_CUSTOM_START_DATE = "keychain_custom:start_date"
-
 let UD_CURRENT_SAVED_DATE = "currentSavedDate"
 let UD_AVAILABLE_TASKS = "availableTasks"
 
@@ -85,15 +82,16 @@ let UD_USER_DATA_WEEKDAYS_ARRAY = "userDataWeekdaysArray"
 let UD_USER_DATA_TASKS_ARRAY = "userDataTasksArray"
 
 
+
 //let UD_USER_UID = "currentUserUid"
 let UD_USER_KEEP_LOGGED_IN = "currentUserKeepLoggedIn"
 
-let KC_USER_EMAIL = "keychain_user_email"
 let KC_USER_PASSWORD = "keychain_user_password"
 let KC_USER_UID = "keychain_user_uid"
-
-let KC_USER_FIRSTNAME = "keychain_user_firstname"
-let KC_USER_LASTNAME = "keychain_user_lastname"
+let KC_USER_EMAIL = "email"
+let KC_CUSTOM_START_DATE = "custom:start_time"
+let KC_USER_GIVEN_NAME = "given_name"
+let KC_USER_FAMILY_NAME = "family_name"
 
 let KC_SESSION_TOKEN = "keychain_session_token"
 
@@ -118,7 +116,9 @@ let FIRST_RUN_VALUE = "1strun"
 let ProExp_UserToolStatus = "userId,breathing_unlocked,complex_emotions_unlocked,making_meaning_unlocked"
 let ProExp_UserAnalytics = "userId,current_days_in_row_used,max_days_in_row_used,tasks_completed,tasks_per_category_completed"
 let ProExp_Tasks = "task_day,sort,task_duration_seconds,task_title,task_type,task_data,task_category,task_subcategory"
-let ProExp_UserTaskStatus = "userId,task_day,is_checked_off,is_completed,tasks"
+let ProExp_UserTaskStatus = "userId,task_day,is_completed,tasks"
+
+
 
 extension String {
     func isValidEmail() -> Bool {

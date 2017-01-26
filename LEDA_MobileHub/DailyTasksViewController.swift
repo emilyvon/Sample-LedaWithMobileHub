@@ -339,6 +339,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
         } else {
             print("*** ❌ displayAvailableTasks ***")
             
+            /*
             AWSClientManager.shared.getItemFromDB(startTaskNo: taskNo, endTaskNo: taskNo + 4, completion: { (tasksDict: [(key: Int, value: UserContent)]) in
                 
                 
@@ -348,6 +349,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
                 
                 
             })
+            */
             
         }
     }
@@ -419,10 +421,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
 //            print("daysInRow: \(daysInRow)")
 //        }
         
-        AWSClientManager.shared.getUserTask(forTaskday: 0) {
-            
-        }
-
+        
         
 //        Helper.shared.fetchAndDisplayCurrentUnfinishedUserTask()
         

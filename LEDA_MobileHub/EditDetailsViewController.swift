@@ -31,12 +31,12 @@ class EditDetailsViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let first = KeychainSwift().get(KC_USER_FIRSTNAME), let last = KeychainSwift().get(KC_USER_LASTNAME), let email = KeychainSwift().get(KC_USER_EMAIL) else {
+        guard let first = KeychainSwift().get(KC_USER_GIVEN_NAME),/* let last = KeychainSwift().get(KC_USER_LASTNAME), */let email = KeychainSwift().get(KC_USER_EMAIL) else {
             print("*** ❌ uid is nil ***")
             return
         }
         
-        nameTextField.text = "\(first.capitalized) \(last.capitalized)"
+        nameTextField.text = "\(first.capitalized)"
         emailTextField.text = email.lowercased()
         
 
@@ -100,6 +100,7 @@ class EditDetailsViewController: UIViewController, UITextFieldDelegate {
             
             uiview.addSubview(actInt)
             
+            /*
             AWSClientManager.shared.saveUserInfo(givenName: name.components(separatedBy: " ")[0], familyName: name.components(separatedBy: " ")[1], email: email) {
                 DispatchQueue.main.async {
                     // actInt.stop
@@ -107,13 +108,14 @@ class EditDetailsViewController: UIViewController, UITextFieldDelegate {
                     self.showAlert(msgStr: "Your information has been saved!")
                     
                     if let name = self.nameTextField.text, let email = self.emailTextField.text {
-                        KeychainSwift().set(name.components(separatedBy: " ")[0], forKey: KC_USER_FIRSTNAME)
+                        KeychainSwift().set(name.components(separatedBy: " ")[0], forKey: KC_USER_GIVEN_NAME)
                         KeychainSwift().set(name.components(separatedBy: " ")[1], forKey: KC_USER_LASTNAME)
                         KeychainSwift().set(email, forKey: KC_USER_EMAIL)
                     }
                     
                 }
             }
+            */
         }
     }
     

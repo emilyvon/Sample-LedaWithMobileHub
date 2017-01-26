@@ -58,17 +58,17 @@ class ProgressViewController: UIViewController {
         
         displayData()
         
-//        AWSClientManager.shared.registerDynamoDB {
-            
-            AWSClientManager.shared.queryTestResults {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.actIntContainerView.isHidden = true
-                    
-                }
-            }
-            
+        //        AWSClientManager.shared.registerDynamoDB {
+        
+//        AWSClientManager.shared.queryTestResults {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//                self.actIntContainerView.isHidden = true
+//                
+//            }
 //        }
+        
+        //        }
         
     }
     
@@ -82,7 +82,7 @@ class ProgressViewController: UIViewController {
             tasksCompletedCountLabel.text = tasksCompleted
         }
         
-        if let daysInRow = kc.get(KC_ANALYTICS_CURRENT_DAYS_IN_ROW) {
+        if let daysInRow = kc.get(KC_ANALYTICS_MAX_DAYS_IN_ROW) {
             daysInRowCountLabel.text = daysInRow
         }
         
@@ -106,11 +106,11 @@ class ProgressViewController: UIViewController {
         if let emotionUnlocked = kc.getBool(KC_TOOLS_EMOTION_UNLOCKED) {
             print("emotionUnlocked ❗️ \(emotionUnlocked)")
             if emotionUnlocked {
-                //                        self.complexEmotionsButton.backgroundColor = UIColor.clear
+                self.complexEmotionsButton.backgroundColor = UIColor.clear
             } else {
-                //                        self.complexEmotionsButton.backgroundColor = UIColor.white
+                self.complexEmotionsButton.backgroundColor = UIColor.white
                 
-                //                self.complexEmotionsButton.isUserInteractionEnabled = true
+                self.complexEmotionsButton.isUserInteractionEnabled = true
                 
             }
         }
@@ -118,11 +118,11 @@ class ProgressViewController: UIViewController {
         if let breathingUnlocked = kc.getBool(KC_TOOLS_BREATHING_UNLOCKED) {
             print("breathingUnlocked ❗️ \(breathingUnlocked)")
             if breathingUnlocked {
-                //                self.breathingExerciseButton.backgroundColor = UIColor.clear
-                //                self.breathingExerciseButton.isUserInteractionEnabled = true
+                self.breathingExerciseButton.backgroundColor = UIColor.clear
+                self.breathingExerciseButton.isUserInteractionEnabled = true
             } else {
-                //                self.breathingExerciseButton.backgroundColor = UIColor.white
-                //                self.breathingExerciseButton.isUserInteractionEnabled = true
+                self.breathingExerciseButton.backgroundColor = UIColor.white
+                self.breathingExerciseButton.isUserInteractionEnabled = false
             }
             
         }
@@ -160,62 +160,6 @@ class ProgressViewController: UIViewController {
     //========================================
     // MARK: - Private methods
     //========================================
-    
-    /*
-     func initData(completion:()->()) {
-     complexEmotionsButton.isUserInteractionEnabled = false
-     breathingExerciseButton.isUserInteractionEnabled = false
-     makingMeaningButton.isUserInteractionEnabled = false
-     completion()
-     }
-     */
-    
-    /*
-     func updateContent() {
-     print("ProgressVC : updateContent ✅")
-     // reload data and save to singletons
-     AWSClientManager.shared.queryUserAnalytics(completion: { userAnalytics in
-     
-     DispatchQueue.main.async {
-     self.daysInRowCountLabel.text = userAnalytics.daysInARow
-     self.tasksCompletedCountLabel.text = userAnalytics.tasksCompleted
-     self.resilienceCountLabel.text = userAnalytics.resilienceTasksCompleted
-     self.growthCountLabel.text = userAnalytics.growthMindsetTasksCompleted
-     self.negotiationCountLabel.text = userAnalytics.negotiationTasksCompleted
-     }
-     })
-     
-     
-     AWSClientManager.shared.queryFromUserTools(completion: { tools in
-     
-     DispatchQueue.main.async {
-     
-     if tools.isComplexEmotionsUnlocked {
-     //                        self.complexEmotionsButton.backgroundColor = UIColor.clear
-     } else {
-     //                        self.complexEmotionsButton.backgroundColor = UIColor.white
-     
-     self.complexEmotionsButton.isUserInteractionEnabled = true
-     
-     }
-     
-     if tools.isBreathingUnlocked {
-     //                self.breathingExerciseButton.backgroundColor = UIColor.clear
-     self.breathingExerciseButton.isUserInteractionEnabled = true
-     } else {
-     //                self.breathingExerciseButton.backgroundColor = UIColor.white
-     self.breathingExerciseButton.isUserInteractionEnabled = true
-     }
-     
-     if tools.isMakingMeaningUnlocked {
-     
-     } else {
-     self.makingMeaningButton.isUserInteractionEnabled = true
-     }
-     }
-     })
-     }
-     */
     
     func showBreathingVideo() {
         
@@ -313,8 +257,6 @@ extension ProgressViewController: SwiftAlertViewDelegate {
     func showToolsAlert() {
         
         let alertView = SwiftAlertView(title: "Content Locked", message: "Please complete more tasks to unlock this tool.", delegate: self, cancelButtonTitle: "OK", otherButtonTitles: nil)
-        
-        
         
         alertView.backgroundColor = UIColor.white
         

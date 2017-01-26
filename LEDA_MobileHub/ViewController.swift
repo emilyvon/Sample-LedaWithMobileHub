@@ -30,10 +30,13 @@ class ViewController: UIViewController {
         presentSignInViewController()
     }
     
-    
+    //========================================
+    // MARK: - Actions
+    //========================================
     @IBAction func insert(_ sender: Any) {
+       
         
-        logout()
+        
     }
     
     func logout() {
@@ -52,7 +55,6 @@ class ViewController: UIViewController {
         let item = UserTaskStatus()!
         
         item._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-        item._isCheckedOff = 0
         item._isCompleted = 0
         item._taskDay = dayNo
         item._tasks = ["text":"text", "bool": true, "number": 11, "dict": ["string": "hello"], "list": [3,4,5,6,8]]

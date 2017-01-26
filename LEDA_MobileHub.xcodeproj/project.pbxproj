@@ -279,6 +279,7 @@
 		EBEBF5CC1E2878DB0082C029 /* LEDA_MobileHub */ = {
 			isa = PBXGroup;
 			children = (
+				EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */,
 				EBF3A8591E35DDD80044F9ED /* DailyTask.swift */,
 				EBF3A8631E35DE050044F9ED /* External */,
 				EBF3A85E1E35DDF60044F9ED /* Utils */,
@@ -368,7 +369,6 @@
 		EBF3A7EA1E35CECE0044F9ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EBEBF5CD1E2878DB0082C029 /* AppDelegate.swift */,
 				EBEBF5CF1E2878DB0082C029 /* ViewController.swift */,
 				EBEBF5D11E2878DB0082C029 /* Proj_Main.storyboard */,
 				EBEBF6181E288C7C0082C029 /* SignInViewController.swift */,

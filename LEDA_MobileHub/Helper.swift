@@ -60,6 +60,7 @@ class Helper {
     
     // save current day as time interval to user pool
     func getCurrentDateStr() -> String {
+        print("getCurrentDateStr ❗️ \(Int(NSDate().timeIntervalSince1970))")
         return "\(Int(NSDate().timeIntervalSince1970))"
     }
     
@@ -133,9 +134,16 @@ class Helper {
     
     func getWeekdayArr() -> [Int]? {
         
-        if let currentWeedayInt = getCurrentDate()?.weekdayInt {
+        guard let dateString = KeychainSwift().get(KC_CUSTOM_START_DATE), let maxStr = KeychainSwift().get(KC_ANALYTICS_MAX_DAYS_IN_ROW) else {
+            print("dateString ❌")
+            return nil
+        }
+        
+        //        if let currentWeekdayInt = getCurrentDate()?.weekdayInt {
+        if let customeWeekdayInt = getCustomDateDetail(withCustom: dateString, addDays: Int(maxStr)!) {
             var arr = [Int]()
-            var x = currentWeedayInt
+            var x = customeWeekdayInt
+            
             
             while  x <= 7 {
                 arr.append(x)
@@ -152,35 +160,37 @@ class Helper {
                     let ud = UserDefaults.standard
                     ud.set(arr, forKey: UD_USER_DATA_WEEKDAYS_ARRAY)
                     
-                    
-                    
                     return arr
                 }
             }
             
+
+            
         }
         return nil
-        
     }
     
-    func getTasksArr(daysInRow: Int) -> [Int]? {
+    func getTasksArr() -> [Int]? {
+        
+        guard let maxStr = KeychainSwift().get(KC_ANALYTICS_MAX_DAYS_IN_ROW) else {
+            print("maxStr ❌")
+            return nil
+        }
+        
         
         if let weekdayArr = Helper.shared.getWeekdayArr() {
             var taskArr = [Int]()
-            var rand = daysInRow
-            var xCount = 0
+            let startTaskNo = Int(maxStr)!
+            var i = 0
             
             for x in weekdayArr {
                 
-                if xCount == 0 {
-                    rand += 0
-                } else if x != 7 && x != 1 {
-                    rand += 1
+                if x == 1 || x == 7 {
+                    taskArr.append(-1)
                 } else {
-                    rand += 0
+                    taskArr.append(startTaskNo+i)
+                    i += 1
                 }
-                taskArr.append(rand)
-                xCount += 1
                 
             }
             
@@ -196,6 +206,8 @@ class Helper {
     }
     
     
+    
+    
     // MARK: get current date details
     func getCurrentDate() -> (weekdayInt: Int, weekdayStr: String, dayStr: String)? {
         
@@ -208,6 +220,29 @@ class Helper {
             return (weekday, weekdayConverter(weekday: weekday), String(day))
         }
         
+        return nil
+    }
+    
+    //========================================
+    // MARK: - get a custom date details
+    //========================================
+    func getCustomDateDetail(withCustom dateStr: String, addDays num: Int) -> Int? {
+        print("getCustomDateDetail ❗️ dateStr\(dateStr)")
+        if let dateDouble = Double(dateStr) {
+            
+            let customDate = Date(timeIntervalSince1970: dateDouble)
+            
+            let date = Calendar.current.date(byAdding: Calendar.Component.day, value: num, to: customDate)!
+            
+            let component = NSCalendar.current.dateComponents([.weekday, .day], from: date)
+            
+            if let weekday = component.weekday, let day = component.day {
+                
+                print(" ❗️ weekday: \(weekday), day: \(day) weekdayStr: \(weekdayConverter(weekday: weekday))")
+                return weekday
+            }
+            
+        }
         return nil
     }
     
@@ -349,16 +384,16 @@ class Helper {
         return nil
     }
     
-//    func getAvailableUnfinishedTask() -> Int {
-//        if let decoded = UserDefaults.standard.object(forKey: UD_USER_ANALYTICS) as? Data, let analytics = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? UserAnalytic {
-//            print("analytics ❗️ \(analytics.daysInARow) \(analytics.tasksCompleted)")
-//            if let unfinishedTaskNo = Int(analytics.daysInARow) {
-//                print("unfinishedTaskNo ❗️ \(unfinishedTaskNo)")
-//                return unfinishedTaskNo
-//            }
-//        }
-//        return -1
-//    }
+    //    func getAvailableUnfinishedTask() -> Int {
+    //        if let decoded = UserDefaults.standard.object(forKey: UD_USER_ANALYTICS) as? Data, let analytics = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? UserAnalytic {
+    //            print("analytics ❗️ \(analytics.daysInARow) \(analytics.tasksCompleted)")
+    //            if let unfinishedTaskNo = Int(analytics.daysInARow) {
+    //                print("unfinishedTaskNo ❗️ \(unfinishedTaskNo)")
+    //                return unfinishedTaskNo
+    //            }
+    //        }
+    //        return -1
+    //    }
     
     func getCurrentTask(contentDay num: Int, task no: Int) -> UserTask? {
         print("getCurrentTask ❗️ contentDay \(num), task \(no)")
@@ -377,7 +412,7 @@ class Helper {
         return nil
     }
     
-
+    
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
@@ -413,8 +448,8 @@ class Helper {
         
         keychain.delete(KC_SESSION_TOKEN)
         
-        keychain.delete(KC_USER_FIRSTNAME)
-        keychain.delete(KC_USER_LASTNAME)
+        keychain.delete(KC_USER_GIVEN_NAME)
+        keychain.delete(KC_USER_FAMILY_NAME)
         keychain.delete(KC_CUSTOM_START_DATE)
         
         keychain.delete(KC_ANALYTICS_TASKS_COMPLETED)
@@ -448,59 +483,84 @@ class Helper {
         
         
         /*
-        if let daysInRow = KeychainSwift().get(KC_ANALYTICS_DAYS_IN_ROW) {
-            
-            let finishedTaskNo = Int(daysInRow)! - 1
-            
-            AWSClientManager.shared.getUserTask(forTaskday: finishedTaskNo, completion: { 
-                if let taskResult = UserData.shared.userTaskResult {
-
-                    if taskResult.isCompleted && taskResult.isCheckedOff {
-                        
-                        // check ++1 task exists
-                        
-                        // 1. check ++1 task exists: exists
-                        // save ++1 to UserData.shared.userTaskResult
-                        
-                        
-                        
-                        // 1.1 have tasks been started: yes
-                        // show today returning/resume
-                        
-                        
-                        
-                        // 1.2 have tasks been started: no
-                        // display normal empty task
-
-                        
-                        
-                        
-                        
-                        // 2. check ++1 task exists: NOT exist
-                        // initialize new empty task result with daysInRow ++1 and save to UserData.shared.userTaskResult
-                        
-                        
-                        
-                        
-                    } else {
-                        
-                        //task daysInRow not finished, show Today Returning
-                     
-                        // already saved task result, display it on DailyTaskVC
-                        
-                        
-                    }
-                    
-                }
-            })
-            
-        }
-        
-        */
+         if let daysInRow = KeychainSwift().get(KC_ANALYTICS_DAYS_IN_ROW) {
+         
+         let finishedTaskNo = Int(daysInRow)! - 1
+         
+         AWSClientManager.shared.getUserTask(forTaskday: finishedTaskNo, completion: {
+         if let taskResult = UserData.shared.userTaskResult {
+         
+         if taskResult.isCompleted && taskResult.isCheckedOff {
+         
+         // check ++1 task exists
+         
+         // 1. check ++1 task exists: exists
+         // save ++1 to UserData.shared.userTaskResult
+         
+         
+         
+         // 1.1 have tasks been started: yes
+         // show today returning/resume
+         
+         
+         
+         // 1.2 have tasks been started: no
+         // display normal empty task
+         
+         
+         
+         
+         
+         // 2. check ++1 task exists: NOT exist
+         // initialize new empty task result with daysInRow ++1 and save to UserData.shared.userTaskResult
+         
+         
+         
+         
+         } else {
+         
+         //task daysInRow not finished, show Today Returning
+         
+         // already saved task result, display it on DailyTaskVC
+         
+         
+         }
+         
+         }
+         })
+         
+         }
+         
+         */
         
         
         
     }
+    
+    func getAllTasksFromKeychain() -> [Task]? {
+        if let obj = KeychainSwift().getData("TaskArr"), let arr = NSKeyedUnarchiver.unarchiveObject(with: obj) as? [Task] {
+            return arr
+        }
+        return nil
+    }
+    
+    func getTaskFromKeychain(withContent dayNo: Int, withTask sortNo: Int) -> [Task]? {
+        
+        if let tasksArr = getAllTasksFromKeychain() {
+            let filteredArr = tasksArr.filter({ (task) -> Bool in
+                task.sort == "\(sortNo)" && task.taskDay == "\(dayNo)"
+            })
+            
+            print("filteredArr ✅ \(filteredArr)")
+            for obj in filteredArr {
+                print("sort ❗️ \(obj.sort) \(obj.taskDay)")
+            }
+            
+            return filteredArr
+        }
+        return nil
+    }
+    
     
     
 }

@@ -19,7 +19,6 @@ class UserTaskStatus: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
     var _taskDay: NSNumber?
-    var _isCheckedOff: NSNumber?
     var _isCompleted: NSNumber?
     var _tasks: [String: Any]?
     
@@ -42,7 +41,6 @@ class UserTaskStatus: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         return [
                "_userId" : "userId",
                "_taskDay" : "task_day",
-               "_isCheckedOff" : "is_checked_off",
                "_isCompleted" : "is_completed",
                "_tasks" : "tasks",
         ]

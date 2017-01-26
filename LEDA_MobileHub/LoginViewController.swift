@@ -22,8 +22,6 @@ class LoginViewController: UIViewController {
     var overlayView = UIView(frame: UIScreen.main.bounds)
     var actInd = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
-    //    var pool: AWSCognitoIdentityUserPool?
-    //    var user: AWSCognitoIdentityUser?
     //========================================
     // MARK: - Outlets
     //========================================
@@ -81,36 +79,6 @@ class LoginViewController: UIViewController {
         
         AWSCognitoUserPoolsSignInProvider.sharedInstance().setInteractiveAuthDelegate(self)
         handleLoginWithSignInProvider(signInProvider: AWSCognitoUserPoolsSignInProvider.sharedInstance())
-        
-        //
-        //        guard let email = emailTextField.text, let password = passwordTextField.text else {
-        //            return
-        //        }
-        //
-        //        if !(email.isEmpty || password.isEmpty) {
-        //
-        //            AWSClientManager.shared.signInUser(name: email, password: password, completion:{ (result) in
-        //                if result {
-        //                    print("signInBtnPressed ✅ successfully")
-        //
-        //                    Helper.shared.isLoggedIn = true
-        //
-        //                    NotificationCenter.default.post(name: NSNotification.Name("updateWeekviewTasks"), object: nil)
-        //
-        //                    DispatchQueue.main.async {
-        //                        self.dismiss(animated: true, completion: nil)
-        //                    }
-        //                } else {
-        //                    print("signInBtnPressed ❌")
-        //                    DispatchQueue.main.async {
-        //                        self.overlayView.removeFromSuperview()
-        //                        self.showAlert(msgStr: "Incorrect email or password.")
-        //                    }
-        //                }
-        //            })
-        //        } else {
-        //            showAlert(msgStr: "Please fill in your email and password.")
-        //        }
     }
     
     func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
@@ -279,9 +247,14 @@ extension LoginViewController: AWSCognitoIdentityPasswordAuthentication {
         if let err = error {
             
             print("❌ didCompleteStepWithError : \(err.localizedDescription)")
+            
+            
+            
             DispatchQueue.main.async {
+                
                 self.overlayView.removeFromSuperview()
                 self.showAlert(msgStr: "Incorrect email or password.")
+                
             }
             
         }
@@ -291,7 +264,11 @@ extension LoginViewController: AWSCognitoIdentityPasswordAuthentication {
 extension LoginViewController: AWSCognitoUserPoolsSignInHandler {
     
     func handleUserPoolSignInFlowStart() {
-        guard let email = self.emailTextField.text, let _ = self.passwordTextField.text else { return }
+        guard let email = self.emailTextField.text, !email.isEmpty, let password = self.passwordTextField.text, !password.isEmpty else {
+            self.overlayView.removeFromSuperview()
+            self.showAlert(msgStr: "Please enter a valid user name / password.")
+            return
+        }
         
 //        let emailTemp = "chris"
         let passwordTemp = "passwordA1#"

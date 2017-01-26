@@ -42,29 +42,119 @@ import Foundation
 //    }
 //}
 
-class UserTools: NSObject, NSCoding {
+//class UserTools: NSObject, NSCoding {
+//    
+//    var isMakingMeaningUnlocked: Bool
+//    var isComplexEmotionsUnlocked: Bool
+//    var isBreathingUnlocked: Bool
+//    
+//    init(isMakingMeaningUnlocked: Bool, isComplexEmotionsUnlocked: Bool, isBreathingUnlocked: Bool) {
+//        self.isMakingMeaningUnlocked = isMakingMeaningUnlocked
+//        self.isComplexEmotionsUnlocked = isComplexEmotionsUnlocked
+//        self.isBreathingUnlocked = isBreathingUnlocked
+//    }
+//    
+//    required convenience init(coder aDecoder: NSCoder) {
+//        let isMakingMeaningUnlocked = aDecoder.decodeBool(forKey: "UserToolsIsMakingMeaningUnlocked")
+//        let isComplexEmotionsUnlocked = aDecoder.decodeBool(forKey: "UserToolsIsComplexEmotionsUnlocked")
+//        let isBreathingUnlocked = aDecoder.decodeBool(forKey: "UserToolsIsBreathingUnlocked")
+//        self.init(isMakingMeaningUnlocked: isMakingMeaningUnlocked, isComplexEmotionsUnlocked: isComplexEmotionsUnlocked, isBreathingUnlocked: isBreathingUnlocked)
+//    }
+//    
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(isMakingMeaningUnlocked, forKey: "UserToolsIsMakingMeaningUnlocked")
+//        aCoder.encode(isComplexEmotionsUnlocked, forKey: "UserToolsIsComplexEmotionsUnlocked")
+//        aCoder.encode(isBreathingUnlocked, forKey: "UserToolsIsBreathingUnlocked")
+//    }
+//}
+
+class Task: NSObject, NSCoding {
     
-    var isMakingMeaningUnlocked: Bool
-    var isComplexEmotionsUnlocked: Bool
-    var isBreathingUnlocked: Bool
+    var taskDay: String
+    var sort: String
+    var taskCategory: String
+    var taskDurationSeconds: String
+    var taskSubcategory: String
+    var taskTitle: String
+    var taskType: String
     
-    init(isMakingMeaningUnlocked: Bool, isComplexEmotionsUnlocked: Bool, isBreathingUnlocked: Bool) {
-        self.isMakingMeaningUnlocked = isMakingMeaningUnlocked
-        self.isComplexEmotionsUnlocked = isComplexEmotionsUnlocked
-        self.isBreathingUnlocked = isBreathingUnlocked
+    // video
+    var videoUrl: String
+    // quiz
+    var answers: [[String: String]]
+    var graphImage: String
+    var max: String
+    var mean: String
+    var min: String
+    var questions: [String]
+    var resultTextIntro: String
+    var resultTextSectionResult: [[String: String]]
+    var standardDeviation: String
+    // checkoff
+    var items: [String]
+    
+    init(taskDay: String, sort: String, taskCategory: String, taskDurationSeconds: String, taskSubcategory: String, taskTitle: String, taskType: String, videoUrl: String, answers: [[String: String]], graphImage: String, max: String, mean: String, min: String, questions: [String], resultTextIntro: String, resultTextSectionResult: [[String: String]], standardDeviation: String, items: [String]) {
+        self.taskDay = taskDay
+        self.sort = sort
+        self.taskCategory = taskCategory
+        self.taskDurationSeconds = taskDurationSeconds
+        self.taskSubcategory = taskSubcategory
+        self.taskTitle = taskTitle
+        self.taskType = taskType
+        self.videoUrl = videoUrl
+        self.answers = answers
+        self.graphImage = graphImage
+        self.max = max
+        self.mean = mean
+        self.min = min
+        self.questions = questions
+        self.resultTextIntro = resultTextIntro
+        self.resultTextSectionResult = resultTextSectionResult
+        self.standardDeviation = standardDeviation
+        self.items = items
     }
     
-    required convenience init(coder aDecoder: NSCoder) {
-        let isMakingMeaningUnlocked = aDecoder.decodeBool(forKey: "UserToolsIsMakingMeaningUnlocked")
-        let isComplexEmotionsUnlocked = aDecoder.decodeBool(forKey: "UserToolsIsComplexEmotionsUnlocked")
-        let isBreathingUnlocked = aDecoder.decodeBool(forKey: "UserToolsIsBreathingUnlocked")
-        self.init(isMakingMeaningUnlocked: isMakingMeaningUnlocked, isComplexEmotionsUnlocked: isComplexEmotionsUnlocked, isBreathingUnlocked: isBreathingUnlocked)
+    required init?(coder aDecoder: NSCoder) {
+        self.taskDay = aDecoder.decodeObject(forKey: "TaskTaskDay") as? String ?? ""
+        self.sort = aDecoder.decodeObject(forKey: "TaskSort") as? String ?? ""
+        self.taskCategory = aDecoder.decodeObject(forKey: "TaskTaskCategory") as? String ?? ""
+        self.taskDurationSeconds = aDecoder.decodeObject(forKey: "TaskTaskDurationSeconds") as? String ?? ""
+        self.taskSubcategory = aDecoder.decodeObject(forKey: "TaskSubcategory") as? String ?? ""
+        self.taskTitle = aDecoder.decodeObject(forKey: "TaskTaskTitle") as? String ?? ""
+        self.taskType = aDecoder.decodeObject(forKey: "TaskTaskType") as? String ?? ""
+        self.videoUrl = aDecoder.decodeObject(forKey: "TaskVideoUrl") as? String ?? ""
+        self.answers = aDecoder.decodeObject(forKey: "TaskAnswers") as? [[String:String]] ?? []
+        self.graphImage = aDecoder.decodeObject(forKey: "TaskGraphImage") as? String ?? ""
+        self.max = aDecoder.decodeObject(forKey: "TaskMax") as? String ?? ""
+        self.mean = aDecoder.decodeObject(forKey: "TaskMean") as? String ?? ""
+        self.min = aDecoder.decodeObject(forKey: "TaskMin") as? String ?? ""
+        self.questions = aDecoder.decodeObject(forKey: "TaskQuestions") as? [String] ?? []
+        self.resultTextIntro = aDecoder.decodeObject(forKey: "TaskResultTextIntro") as? String ?? ""
+        self.resultTextSectionResult = aDecoder.decodeObject(forKey: "TaskResultTextSectionResult") as? [[String: String]] ?? []
+        self.standardDeviation = aDecoder.decodeObject(forKey: "TaskStandardDeviation") as? String ?? ""
+        self.items = aDecoder.decodeObject(forKey: "TaskItems") as? [String] ?? []
     }
+    
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(isMakingMeaningUnlocked, forKey: "UserToolsIsMakingMeaningUnlocked")
-        aCoder.encode(isComplexEmotionsUnlocked, forKey: "UserToolsIsComplexEmotionsUnlocked")
-        aCoder.encode(isBreathingUnlocked, forKey: "UserToolsIsBreathingUnlocked")
+        aCoder.encode(taskDay, forKey: "TaskTaskDay")
+        aCoder.encode(sort, forKey: "TaskSort")
+        aCoder.encode(taskCategory, forKey: "TaskTaskCategory")
+        aCoder.encode(taskDurationSeconds, forKey: "TaskTaskDurationSeconds")
+        aCoder.encode(taskSubcategory, forKey: "TaskSubcategory")
+        aCoder.encode(taskTitle, forKey: "TaskTaskTitle")
+        aCoder.encode(taskType, forKey: "TaskTaskType")
+        aCoder.encode(videoUrl, forKey: "TaskVideoUrl")
+        aCoder.encode(answers, forKey: "TaskAnswers")
+        aCoder.encode(graphImage, forKey: "TaskGraphImage")
+        aCoder.encode(max, forKey: "TaskMax")
+        aCoder.encode(mean, forKey: "TaskMean")
+        aCoder.encode(min, forKey: "TaskMin")
+        aCoder.encode(questions, forKey: "TaskQuestions")
+        aCoder.encode(resultTextIntro, forKey: "TaskResultTextIntro")
+        aCoder.encode(resultTextSectionResult, forKey: "TaskResultTextSectionResult")
+        aCoder.encode(standardDeviation, forKey: "TaskStandardDeviation")
+        aCoder.encode(items, forKey: "TaskItems")
     }
 }
 
@@ -281,7 +371,7 @@ class UserData {
     
     static let shared = UserData()
 
-    var userTools: UserTools?
+//    var userTools: UserTools?
     var userContents: [Int: UserContent]?
     
     
@@ -415,33 +505,3 @@ class UserData {
         return nil
     }
 }
-/*
-class UserInfo: NSObject, NSCoding {
-    //    var startDate: String
-    var givenName: String
-    var familyName: String
-    var email: String
-    
-    init(givenName: String, familyName: String, email: String) {
-        self.givenName = givenName
-        self.familyName = familyName
-        self.email = email
-    }
-    
-    required convenience init(coder aDecoder: NSCoder) {
-        let givenName = aDecoder.decodeObject(forKey: "giveName") as? String ?? ""
-        let familyName = aDecoder.decodeObject(forKey: "familyName") as? String ?? ""
-        let email = aDecoder.decodeObject(forKey: "email") as? String ?? ""
-        self.init(givenName: givenName, familyName: familyName, email: email)
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(givenName, forKey: "giveName")
-        aCoder.encode(familyName, forKey: "familyName")
-        aCoder.encode(email, forKey: "email")
-    }
-    
-    
-    
-}
-*/

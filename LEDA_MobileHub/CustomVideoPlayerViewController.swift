@@ -454,7 +454,7 @@ class CustomVideoPlayerViewController: UIViewController {
                     // save data to DB
                     if let result = UserData.shared.userTaskResult {
                         print("UserData.shared.userTaskResult 2 ✅")
-                        AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
+//                        AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
                     } else {
                         print("UserData.shared.userTaskResult 2 ❌ \(UserData.shared.userTaskResult)")
                     }

@@ -44,7 +44,7 @@ class AccountViewController: UIViewController {
         
         let kc = KeychainSwift()
         
-        if let first = kc.get(KC_USER_FIRSTNAME), let email = kc.get(KC_USER_EMAIL) {
+        if let first = kc.get(KC_USER_GIVEN_NAME), let email = kc.get(KC_USER_EMAIL) {
             print("first ✅ \(first)")
             print("email ✅ \(email)")
             self.firstNameLabel.text = first

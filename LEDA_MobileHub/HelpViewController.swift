@@ -55,15 +55,15 @@ class HelpViewController: UIViewController {
                 return
             }
             
-            guard let givenName = KeychainSwift().get(KC_USER_FIRSTNAME) else {
+            guard let givenName = KeychainSwift().get(KC_USER_GIVEN_NAME) else {
                 print("no givenName")
                 return
             }
             
-            guard let familyName = KeychainSwift().get(KC_USER_LASTNAME) else {
-                print("no familyName")
-                return
-            }
+//            guard let familyName = KeychainSwift().get(KC_USER_LASTNAME) else {
+//                print("no familyName")
+//                return
+//            }
             
             guard let email = KeychainSwift().get(KC_USER_EMAIL) else {
                 print("no email")
@@ -75,7 +75,7 @@ class HelpViewController: UIViewController {
             mail.mailComposeDelegate = self
             mail.setToRecipients(["feedback@leda.com"])
             mail.setSubject("Feedback")
-            mail.setMessageBody("<br/><br/><br/><br/><span style=\"color: #808080;\">--------------</span><br/><span style=\"color: #808080;\">Username: \(givenName) \(familyName)</span><br/><span style=\"color:808080;\"><span style=\"color:#808080;\">Email:&nbsp;\(email)</span><br/></span><span style=\"color: #808080;\">App Version: \(appVersion)</span><br/><span style=\"color: #808080;\">OS: \(UIDevice.current.systemName) \(UIDevice.current.systemVersion)</span>", isHTML: true)
+            mail.setMessageBody("<br/><br/><br/><br/><span style=\"color: #808080;\">--------------</span><br/><span style=\"color: #808080;\">Username: \(givenName)</span><br/><span style=\"color:808080;\"><span style=\"color:#808080;\">Email:&nbsp;\(email)</span><br/></span><span style=\"color: #808080;\">App Version: \(appVersion)</span><br/><span style=\"color: #808080;\">OS: \(UIDevice.current.systemName) \(UIDevice.current.systemVersion)</span>", isHTML: true)
             
             self.present(mail, animated: true, completion: nil)
             

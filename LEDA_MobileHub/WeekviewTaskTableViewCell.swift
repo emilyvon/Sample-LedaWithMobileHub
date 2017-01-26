@@ -30,7 +30,7 @@ class WeekviewTaskTableViewCell: UITableViewCell {
     
     func configureCell(weekdayNo: Int, currentActiveTaskNo: Int, taskNo: Int, tableIndex: Int) {
         
-        print("weekdayNo: \(weekdayNo), currentActiveTaskNo: \(currentActiveTaskNo), taskNo: \(taskNo)")
+        print("weekdayNo: \(weekdayNo), currentActiveTaskNo: \(currentActiveTaskNo), taskNo: \(taskNo), tableIndex: \(tableIndex)")
         
         weekdayStrLabel.text = Helper.shared.weekdayConverter(weekday: weekdayNo)
         taskNoLabel.text = "\(taskNo+1)"

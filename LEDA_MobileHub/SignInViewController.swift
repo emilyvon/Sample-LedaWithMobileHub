@@ -32,6 +32,8 @@ class SignInViewController: UIViewController {
 //            
 //        })
         
+        
+        
     }
     
 //    deinit {
@@ -50,6 +52,8 @@ class SignInViewController: UIViewController {
             DispatchQueue.main.async {
                 if error == nil {
                     // handle successful login
+                    
+                    
                     
                     print("handle successful login ✅")
                     self.dismiss(animated: true, completion: nil)

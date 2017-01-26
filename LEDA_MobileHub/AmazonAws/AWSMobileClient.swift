@@ -88,6 +88,7 @@ class AWSMobileClient: NSObject {
             
             AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: { (result: Any?, error: Error?) in
                 print("❗️ Result: \(result) \n Error:\(error?.localizedDescription)")
+                NotificationCenter.default.post(name: NSNotification.Name("AWSIdentityManagerResumeSession"), object: nil)
             })
             
             /*AWSIdentityManager.defaultIdentityManager().resumeSessionWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in

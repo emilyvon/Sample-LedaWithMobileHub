@@ -34,6 +34,7 @@ class AWSClientManager {
     var response: AWSCognitoIdentityUserGetDetailsResponse?
     
     
+    /*
     func registerUserPool(completion: (_ pool: AWSCognitoIdentityUserPool)->()) {
         
         print("*** setting up AWS ***")
@@ -86,9 +87,9 @@ class AWSClientManager {
         
         completion(pool)
     }
+    */
     
-    
-    
+    /*
     // sign in user explicitly
     func signInUser(name: String, password: String, completion: @escaping (Bool)->()) {
         
@@ -171,10 +172,13 @@ class AWSClientManager {
         
     }
     
-
+ */
+ 
+ 
+/*
     func getUserDetail(completion: @escaping (_ givenName: String, _ familyName: String, _ email: String)->()) {
         
-        if let first = KeychainSwift().get(KC_USER_FIRSTNAME), let last = KeychainSwift().get(KC_USER_LASTNAME), let email = KeychainSwift().get(KC_USER_EMAIL) {
+        if let first = KeychainSwift().get(KC_USER_GIVEN_NAME),/* let last = KeychainSwift().get(KC_USER_LASTNAME),*/ let email = KeychainSwift().get(KC_USER_EMAIL) {
             print("AWSClientManager : getUserDetail : from UserDefaults ❗️")
             
             completion(first, last, email)
@@ -209,7 +213,7 @@ class AWSClientManager {
                                     
                                     if let given = attribute.value {
                                         print("given ✅ \(given)")
-                                        KeychainSwift().set(given, forKey: KC_USER_FIRSTNAME)
+                                        KeychainSwift().set(given, forKey: KC_USER_GIVEN_NAME)
                                         givenName = given
                                     }
                                 }
@@ -264,7 +268,7 @@ class AWSClientManager {
         }
     }
     
-    
+  */
     
     func forgotPassword(completion: @escaping ()->()) {
         
@@ -312,7 +316,7 @@ class AWSClientManager {
         })
     }
     */
-    
+    /*
     func registerDynamoDB(withToken sessionToken: String, completion: @escaping ()->()) {
         print("AWSClientManager : registerDynamoDB:withToken ✅")
         
@@ -331,7 +335,9 @@ class AWSClientManager {
         completion()
         
     }
+    */
     
+    /*
     func registerDynamoDB(completion: @escaping ()->()) {
         
         let pool = AWSCognitoIdentityUserPool(forKey: KEY_USER_POOL)
@@ -407,7 +413,8 @@ class AWSClientManager {
             return nil
         })
     }
-    
+ */
+ 
     /*
     func queryDataFromDB(completion: @escaping ()->()) {
         
@@ -473,6 +480,7 @@ class AWSClientManager {
     }
     */
     
+    /*
     func saveUserInfo(givenName: String, familyName: String, email: String, completion:@escaping ()->()) {
         
         pool = AWSCognitoIdentityUserPool(forKey: KEY_USER_POOL)
@@ -502,7 +510,7 @@ class AWSClientManager {
                 print("*** ✅ saved userInfo ***")
                 
                 let kc = KeychainSwift()
-                kc.set(givenName, forKey: KC_USER_FIRSTNAME)
+                kc.set(givenName, forKey: KC_USER_GIVEN_NAME)
                 kc.set(familyName, forKey: KC_USER_LASTNAME)
                 kc.set(email, forKey: KC_USER_EMAIL)
                 
@@ -512,7 +520,9 @@ class AWSClientManager {
             return nil
         })
     }
+    */
     
+    /*
     //======================================================
     // MARK: - get a range of tasks and save to UserDefaults
     //======================================================
@@ -724,7 +734,7 @@ class AWSClientManager {
             }
         }
     }
-    
+    */
     
     
 //    func queryUserAnalytics(completion:@escaping (UserAnalytic)->()) {
@@ -817,7 +827,7 @@ class AWSClientManager {
 //        }
 //    }
     
-    
+    /*
     func queryFromUserTools(completion: @escaping (UserTools)->()) {
         
         guard let uid = KeychainSwift().get(KC_USER_UID) else {
@@ -850,13 +860,13 @@ class AWSClientManager {
                         
                         if let makingMeans = item["making_meaning_unlocked"]?.boolean, let breathing = item["breathing_unlocked"]?.boolean, let complexEmotions = item["complex_emotions_unlocked"]?.boolean {
                             
-                            let tools = UserTools(isMakingMeaningUnlocked: makingMeans.boolValue, isComplexEmotionsUnlocked: complexEmotions.boolValue, isBreathingUnlocked: breathing.boolValue)
-                            
-                            // save UserTools to UserDefaults
-                            let encodeData = NSKeyedArchiver.archivedData(withRootObject: tools)
-                            let ud = UserDefaults.standard
-                            ud.set(encodeData, forKey: UD_USER_TOOLS)
-                            ud.synchronize()
+//                            let tools = UserTools(isMakingMeaningUnlocked: makingMeans.boolValue, isComplexEmotionsUnlocked: complexEmotions.boolValue, isBreathingUnlocked: breathing.boolValue)
+//                            
+//                            // save UserTools to UserDefaults
+//                            let encodeData = NSKeyedArchiver.archivedData(withRootObject: tools)
+//                            let ud = UserDefaults.standard
+//                            ud.set(encodeData, forKey: UD_USER_TOOLS)
+//                            ud.synchronize()
                             
                             KeychainSwift().set(makingMeans.boolValue, forKey: KC_TOOLS_MEANING_UNLOCKED)
                             KeychainSwift().set(breathing.boolValue, forKey: KC_TOOLS_BREATHING_UNLOCKED)
@@ -870,6 +880,7 @@ class AWSClientManager {
             }
         }
     }
+    */
     
     /*
     // testing
@@ -939,7 +950,7 @@ class AWSClientManager {
     */
     
     // testing
-    
+    /*
     func putUserTaskResult(userTaskResult: UserTaskResult) {
         
         guard let uid = KeychainSwift().get(KC_USER_UID) else {
@@ -1070,7 +1081,9 @@ class AWSClientManager {
             }
         }
     }
-    
+    */
+ 
+    /*
     func getUserTask(forTaskday dayNo: Int, completion: @escaping ()->()) {
         
         guard let uid = KeychainSwift().get(KC_USER_UID) else {
@@ -1200,7 +1213,8 @@ class AWSClientManager {
             }
         }
     }
-    
+    */
+    /*
     func queryTestResults(completion: @escaping ()->()) {
         
         guard let uid = KeychainSwift().get(KC_USER_UID) else { return }
@@ -1305,6 +1319,7 @@ class AWSClientManager {
             
         }
     }
+    */
     
     /*
     func updateUserTask(forContentDay contentDay: Int) {
@@ -1446,6 +1461,8 @@ class AWSClientManager {
     }
     */
     
+    
+    /*
     func isDbRegisterd() -> Bool {
         if let _ = AWSDynamoDB(forKey: "ledaDB").configuration.userAgent {
             print("ledaDB registered")
@@ -1455,5 +1472,6 @@ class AWSClientManager {
             return false
         }
     }
+    */
     
 }

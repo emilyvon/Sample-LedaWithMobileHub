@@ -109,7 +109,7 @@ class DailyGoalCheckListViewController: UIViewController, UITableViewDelegate, U
                         
                         if let result = UserData.shared.userTaskResult {
                             print("UserData.shared.userTaskResult 4 ✅")
-                            AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
+//                            AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
                         } else {
                             print("UserData.shared.userTaskResult 4 ❌ \(UserData.shared.userTaskResult)")
                         }
@@ -154,7 +154,7 @@ class DailyGoalCheckListViewController: UIViewController, UITableViewDelegate, U
                     
                     if let result = UserData.shared.userTaskResult {
                         print("UserData.shared.userTaskResult 4 ✅")
-                        AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
+//                        AWSClientManager.shared.putUserTaskResult(userTaskResult: result)
                     } else {
                         print("UserData.shared.userTaskResult 4 ❌ \(UserData.shared.userTaskResult)")
                     }
