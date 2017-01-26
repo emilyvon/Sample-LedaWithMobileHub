@@ -14,13 +14,12 @@ class WeekviewTaskTableViewCell: UITableViewCell {
     @IBOutlet weak var weekdayStrLabel: UILabel!
     @IBOutlet weak var topContainerView: UIView!
     @IBOutlet weak var bottomContainerView: UIView!
-    @IBOutlet weak var icon1ImageView: UIImageView!
-    @IBOutlet weak var icon2ImageView: UIImageView!
-    @IBOutlet weak var icon3ImageView: UIImageView!
-    @IBOutlet weak var description1Label: UILabel!
-    @IBOutlet weak var description2Label: UILabel!
-    @IBOutlet weak var description3Label: UILabel!
     @IBOutlet weak var weekendImageView: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var subcategoryLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var lockedCoverView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +35,21 @@ class WeekviewTaskTableViewCell: UITableViewCell {
         taskNoLabel.text = "\(taskNo+1)"
         
         setupCommonUI(isWeekend: weekdayNo == 7 || weekdayNo == 1 ? true : false)
+        
+        // set up icon
+        if let diff = UserDefaults.standard.object(forKey: "NumOfTasksUnlocked") as? Int {
+            
+            if diff == taskNo {
+                iconImageView.image = UIImage(named: "Play")
+                lockedCoverView.isHidden = true
+            } else if diff < taskNo {
+                iconImageView.image = UIImage(named: "Locked")
+                lockedCoverView.isHidden = false
+            } else {
+                iconImageView.image = UIImage(named: "Play")
+                lockedCoverView.isHidden = true
+            }
+        }
         
         if weekdayNo == 7 || weekdayNo == 1 {
             // weekend: back ground color white
@@ -59,65 +73,51 @@ class WeekviewTaskTableViewCell: UITableViewCell {
                 setupLabelsAndIcons(taskNo: taskNo, isActive: false)
                 
             }
-            
-            
         }
-        
     }
     
     func setupLabelsAndIcons(taskNo: Int, isActive: Bool) {
         
         let color = isActive ? UIColor.white : COLOR_LIGHT_BLUE
-        let colorInt = isActive ? 0 : 1
         
-        description1Label.textColor = color
-        description2Label.textColor = color
-        description3Label.textColor = color
+        categoryLabel.textColor = color
+        subcategoryLabel.textColor = color
+        durationLabel.textColor = color
         
-        getTask(taskNo: taskNo, completion: { (tasks) in
-            for (k,v) in tasks {
-                
-                if k.contains("task1") {
-                    description1Label.text = v.taskTitle
-                    icon1ImageView.image = Helper.shared.getTypeIconImage(color: colorInt, type: v.taskType)
-                } else if k.contains("task2") {
-                    description2Label.text = v.taskTitle
-                    icon2ImageView.image = Helper.shared.getTypeIconImage(color: colorInt, type: v.taskType)
-                } else if k.contains("task3") {
-                    description3Label.text = v.taskTitle
-                    icon3ImageView.image = Helper.shared.getTypeIconImage(color: colorInt, type: v.taskType)
-                }
-            }
-        })
+        
+        
+        getTask(taskNo: taskNo)
         
     }
     
     func setupCommonUI(isWeekend: Bool) {
-        contentView.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0) // pretend cell separator -> very light gray background color
+        contentView.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0)
         
         taskNoLabel.isHidden = isWeekend
-        icon1ImageView.isHidden = isWeekend
-        icon2ImageView.isHidden = isWeekend
-        icon3ImageView.isHidden = isWeekend
-        description1Label.isHidden = isWeekend
-        description2Label.isHidden = isWeekend
-        description3Label.isHidden = isWeekend
+        
+        categoryLabel.isHidden = isWeekend
+        subcategoryLabel.isHidden = isWeekend
+        durationLabel.isHidden = isWeekend
+        iconImageView.isHidden = isWeekend
         
         weekendImageView.isHidden = !isWeekend
+        
+        
     }
     
-    
-    func getTask(taskNo: Int, completion:([String : UserTask])->()) {
+    func getTask(taskNo: Int) {
         
-        if let decoded = UserDefaults.standard.object(forKey: UD_AVAILABLE_TASKS) as? Data, let tasksDict = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [Int: UserContent] {
-            for task in tasksDict {
-                if task.key == taskNo {
-                    completion(task.value.tasks)
+        if let obj = KeychainSwift().getData("TaskArr"), let arr = NSKeyedUnarchiver.unarchiveObject(with: obj) as? [Task] {
+            for item in arr {
+                if item.taskDay == "\(taskNo)" && item.sort == "\(1)" {
+                    categoryLabel.text = item.taskCategory.capitalized
+                    subcategoryLabel.text = item.taskSubcategory.capitalized
+                    
+                    if let seconds = Int(item.taskDurationSeconds) {
+                        durationLabel.text = "\(Int(seconds/60)):\(seconds%60) mins"
+                    }
                 }
             }
         }
     }
-    
-    
-    
 }

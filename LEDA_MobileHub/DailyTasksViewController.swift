@@ -50,7 +50,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
     
     //    var timer = Timer()
     
-    var selectedIndex = -1
+    var passedSelectedIndex = -1
     
     //========================================
     // MARK: - Outlets
@@ -77,7 +77,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
     
     @IBOutlet weak var playButton: UIButton!
     
-    @IBOutlet weak var loadingDotLabel: UILabel!
+//    @IBOutlet weak var loadingDotLabel: UILabel!
     //========================================
     // MARK: - View Lifecycles
     //========================================
@@ -112,7 +112,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("DailyTaskVC : viewWillAppear ✅ : selectedIndex : \(selectedIndex) ")
+        print("DailyTaskVC : viewWillAppear ✅ : selectedIndex : \(passedSelectedIndex) ")
         
         print("UserData.shared.currentContentDay: \(UserData.shared.currentContentDay), UserData.shared.currentTaskNo: \(UserData.shared.currentTaskNo)")
         
@@ -127,7 +127,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
         
         if let weekdayArr = UserDefaults.standard.object(forKey: UD_USER_DATA_WEEKDAYS_ARRAY) as? [Int] {
             
-            if weekdayArr[selectedIndex] == 1 || weekdayArr[selectedIndex] == 7 {
+            if weekdayArr[passedSelectedIndex] == -1/* || weekdayArr[passedSelectedIndex] == 7*/ {
                 logoImageView.image = UIImage(named: "logo blue")
                 menuButton.setImage(UIImage(named: "Menu"), for: UIControlState.normal)
                 weekendContainerView.alpha = 1.0
@@ -148,7 +148,7 @@ class DailyTasksViewController: UIViewController/*, UIPopoverPresentationControl
         if let tasksArr = UserDefaults.standard.object(forKey: UD_USER_DATA_TASKS_ARRAY) as? [Int] {
             
             
-            displayAvailableTasks(taskNo: tasksArr[selectedIndex], completion: {
+            displayAvailableTasks(taskNo: tasksArr[passedSelectedIndex], completion: {
                 
             })
         }

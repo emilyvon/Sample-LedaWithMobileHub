@@ -1470,22 +1470,22 @@ DividerLine</string>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-Vy-MIO">
-                                        <rect key="frame" x="8" y="262.5" width="359" height="94"/>
+                                        <rect key="frame" x="8" y="262" width="359" height="95"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day No Weekday Str" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="1jt-r4-9QN">
-                                                <rect key="frame" x="93.5" y="0.0" width="172" height="33"/>
+                                                <rect key="frame" x="94" y="0.0" width="172" height="33"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-5I-ero">
-                                                <rect key="frame" x="108" y="15" width="143" height="48.5"/>
+                                                <rect key="frame" x="108" y="15" width="143" height="49"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ua7-i0-ntI">
-                                                <rect key="frame" x="8" y="45.5" width="343" height="48.5"/>
+                                                <rect key="frame" x="8" y="46" width="343" height="49"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1501,7 +1501,7 @@ DividerLine</string>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XF1-io-97x">
-                                        <rect key="frame" x="150" y="386.5" width="74" height="74"/>
+                                        <rect key="frame" x="150" y="387" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XF1-io-97x" secondAttribute="height" multiplier="1:1" id="5pp-kt-dEu"/>
                                         </constraints>
@@ -1531,14 +1531,14 @@ DividerLine</string>
                                         <rect key="frame" x="18" y="0.0" width="339" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-2s-KgE">
-                                                <rect key="frame" x="0.0" y="16" width="106.5" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="16" width="106" height="29"/>
                                                 <subviews>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="0hF-H2-rGJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="2"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="2"/>
                                                         <color key="progressTintColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task1 00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="MnJ-Qx-4wo">
-                                                        <rect key="frame" x="0.0" y="12" width="76" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="12" width="76" height="17"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1550,14 +1550,14 @@ DividerLine</string>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZpX-fw-Q6R">
-                                                <rect key="frame" x="116.5" y="16" width="106" height="28.5"/>
+                                                <rect key="frame" x="116" y="16" width="107" height="29"/>
                                                 <subviews>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-1I-iTF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="2"/>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-1I-iTF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="2"/>
                                                         <color key="progressTintColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     </progressView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" text="Task2 00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="TEC-I8-nvq" userLabel="Task2">
-                                                        <rect key="frame" x="0.0" y="12" width="78.5" height="16.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Task2 00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="TEC-I8-nvq" userLabel="Task2">
+                                                        <rect key="frame" x="0.0" y="12" width="79" height="17"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1569,14 +1569,14 @@ DividerLine</string>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a9d-o6-wM3">
-                                                <rect key="frame" x="232.5" y="16" width="106.5" height="28.5"/>
+                                                <rect key="frame" x="233" y="16" width="106" height="29"/>
                                                 <subviews>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="hYU-KN-SsI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="2"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="2"/>
                                                         <color key="progressTintColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task3 00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-kB-ExP" userLabel="Task3">
-                                                        <rect key="frame" x="0.0" y="12" width="78" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="12" width="78" height="17"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1643,13 +1643,13 @@ DividerLine</string>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YI0-y9-Aer" userLabel="Weekend Container View">
-                                <rect key="frame" x="-370" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-385" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-sI-Of7">
                                         <rect key="frame" x="20" y="195" width="335" height="445"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weekend Image" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-k5-gTL">
-                                                <rect key="frame" x="39.5" y="0.0" width="256" height="256"/>
+                                                <rect key="frame" x="40" y="0.0" width="256" height="256"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mhF-k5-gTL" secondAttribute="height" multiplier="1:1" id="2pb-1p-WYJ"/>
                                                 </constraints>
@@ -1658,13 +1658,13 @@ DividerLine</string>
                                                 <rect key="frame" x="0.0" y="296" width="335" height="149"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Saturday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PwF-Ul-A1b">
-                                                        <rect key="frame" x="63" y="0.0" width="209" height="65.5"/>
+                                                        <rect key="frame" x="63" y="0.0" width="209" height="66"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="54"/>
                                                         <color key="textColor" red="0.17254901959999999" green="0.6705882353" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to relax! Take a walk out in the park" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvX-yo-AbF">
-                                                        <rect key="frame" x="74.5" y="65.5" width="186" height="83.5"/>
+                                                        <rect key="frame" x="75" y="66" width="186" height="83"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3195,101 +3195,79 @@ DividerLine</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gt-vG-3C2" userLabel="bottomContainerView">
                                                     <rect key="frame" x="0.0" y="132" width="375" height="211"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bbI-9f-FRl">
-                                                            <rect key="frame" x="8" y="34.5" width="359" height="149.5"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-sE-fff">
-                                                                    <rect key="frame" x="0.0" y="0.5" width="117.5" height="149.5"/>
-                                                                    <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoWatch_blue" translatesAutoresizingMaskIntoConstraints="NO" id="S56-uB-66u">
-                                                                            <rect key="frame" x="31.5" y="0.5" width="55" height="60"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="60" id="Plk-oW-35V"/>
-                                                                                <constraint firstAttribute="width" constant="55" id="SzB-Ii-Wgu"/>
-                                                                            </constraints>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appreciating Complex Emotional States" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UVl-fK-V5c">
-                                                                            <rect key="frame" x="8" y="72.5" width="101.5" height="77.5"/>
-                                                                            <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
-                                                                            <color key="textColor" red="0.17254901959999999" green="0.6705882353" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FS5-gX-hv7">
-                                                                    <rect key="frame" x="120.5" y="0.5" width="118" height="111"/>
-                                                                    <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoQuiz_blue" translatesAutoresizingMaskIntoConstraints="NO" id="dCb-Uc-0pg">
-                                                                            <rect key="frame" x="31.5" y="0.5" width="55" height="60"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="55" id="bSZ-y5-Lze"/>
-                                                                                <constraint firstAttribute="height" constant="60" id="m7G-z7-yPb"/>
-                                                                            </constraints>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Positive Appraisal" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UeX-UN-sI1">
-                                                                            <rect key="frame" x="23.5" y="72.5" width="71.5" height="39"/>
-                                                                            <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
-                                                                            <color key="textColor" red="0.17254901959999999" green="0.6705882353" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-BF-17P">
-                                                                    <rect key="frame" x="241.5" y="0.5" width="117.5" height="91.5"/>
-                                                                    <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoGoal_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Pf7-5u-1mW">
-                                                                            <rect key="frame" x="31" y="0.5" width="55" height="60"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="60" id="1Te-Ly-08y"/>
-                                                                                <constraint firstAttribute="width" constant="55" id="iUy-zk-Nww"/>
-                                                                            </constraints>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ce8-9K-ue4">
-                                                                            <rect key="frame" x="16.5" y="72.5" width="84.5" height="19.5"/>
-                                                                            <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
-                                                                            <color key="textColor" red="0.17254901959999999" green="0.6705882353" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                        </stackView>
                                                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Weekend Image" translatesAutoresizingMaskIntoConstraints="NO" id="F3i-ja-Lce">
                                                             <rect key="frame" x="-287" y="13" width="250" height="151"/>
                                                         </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-a6-LP4">
+                                                            <rect key="frame" x="0.0" y="14" width="375" height="162"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resilience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CH-eJ-Qbu">
+                                                                    <rect key="frame" x="146.5" y="0.0" width="82" height="19"/>
+                                                                    <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="18"/>
+                                                                    <color key="textColor" red="0.17254901960784313" green="0.6705882352941176" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Positive Appraisal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAx-Gq-pgW">
+                                                                    <rect key="frame" x="51" y="27" width="273" height="40"/>
+                                                                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="33"/>
+                                                                    <color key="textColor" red="0.17254901960784313" green="0.6705882352941176" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stB-3D-mOu">
+                                                                    <rect key="frame" x="157" y="75" width="61.5" height="19"/>
+                                                                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="18"/>
+                                                                    <color key="textColor" red="0.17254901960784313" green="0.6705882352941176" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play" translatesAutoresizingMaskIntoConstraints="NO" id="dYV-kQ-Du3">
+                                                                    <rect key="frame" x="157.5" y="102" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="ZdW-WQ-m5m"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="nFx-1e-94d"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-v3-8vv" userLabel="locked covered view">
+                                                            <rect key="frame" x="0.0" y="-130" width="375" height="341"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.85098039219999999" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="211" id="1vF-7G-U2z"/>
-                                                        <constraint firstItem="bbI-9f-FRl" firstAttribute="leading" secondItem="5Gt-vG-3C2" secondAttribute="leading" constant="8" id="EXa-C5-UoX"/>
-                                                        <constraint firstItem="bbI-9f-FRl" firstAttribute="centerY" secondItem="5Gt-vG-3C2" secondAttribute="centerY" multiplier="1.03" id="Gal-17-Rzn"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bbI-9f-FRl" secondAttribute="trailing" constant="8" id="V4n-Yu-1lz"/>
+                                                        <constraint firstItem="eWT-a6-LP4" firstAttribute="centerY" secondItem="5Gt-vG-3C2" secondAttribute="centerY" multiplier="0.9" id="HYv-vz-ZYb"/>
+                                                        <constraint firstAttribute="height" secondItem="eWT-a6-LP4" secondAttribute="height" multiplier="1.3" id="RAk-Va-nO6"/>
                                                         <constraint firstAttribute="width" secondItem="F3i-ja-Lce" secondAttribute="width" multiplier="1.5" id="VAQ-BI-EnA"/>
                                                         <constraint firstAttribute="height" secondItem="F3i-ja-Lce" secondAttribute="height" multiplier="1.4" id="XfC-PK-JDK"/>
+                                                        <constraint firstItem="eWT-a6-LP4" firstAttribute="width" secondItem="5Gt-vG-3C2" secondAttribute="width" id="bi7-i6-M66"/>
+                                                        <constraint firstItem="eWT-a6-LP4" firstAttribute="centerX" secondItem="5Gt-vG-3C2" secondAttribute="centerX" id="cqy-G5-jlK"/>
+                                                        <constraint firstAttribute="bottom" secondItem="A1p-v3-8vv" secondAttribute="bottom" id="nDq-Bt-q5I"/>
                                                         <constraint firstAttribute="centerY" secondItem="F3i-ja-Lce" secondAttribute="centerY" multiplier="1.2" id="ovO-O3-4Qu"/>
-                                                        <constraint firstItem="bbI-9f-FRl" firstAttribute="centerX" secondItem="5Gt-vG-3C2" secondAttribute="centerX" id="t0d-jK-k9Z"/>
                                                         <constraint firstItem="F3i-ja-Lce" firstAttribute="centerX" secondItem="5Gt-vG-3C2" secondAttribute="centerX" id="zq7-sm-zyu"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.98378906249999998" green="0.98378906249999998" blue="0.98378906249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="A1p-v3-8vv" firstAttribute="leading" secondItem="geG-h7-lze" secondAttribute="leading" id="Ibx-2f-Dqu"/>
                                                 <constraint firstItem="geG-h7-lze" firstAttribute="leading" secondItem="LRe-1R-UIV" secondAttribute="leading" id="NO9-Nz-ZrA"/>
                                                 <constraint firstItem="geG-h7-lze" firstAttribute="top" secondItem="LRe-1R-UIV" secondAttribute="top" constant="2" id="Qz4-4w-GY2"/>
                                                 <constraint firstAttribute="trailing" secondItem="geG-h7-lze" secondAttribute="trailing" id="WHg-2z-eWa"/>
+                                                <constraint firstItem="A1p-v3-8vv" firstAttribute="top" secondItem="geG-h7-lze" secondAttribute="top" id="eHe-TD-bW1"/>
                                                 <constraint firstItem="5Gt-vG-3C2" firstAttribute="top" secondItem="geG-h7-lze" secondAttribute="bottom" id="pxc-Qv-Lhx"/>
                                                 <constraint firstItem="5Gt-vG-3C2" firstAttribute="leading" secondItem="LRe-1R-UIV" secondAttribute="leading" id="q58-Ku-b77"/>
                                                 <constraint firstAttribute="trailing" secondItem="5Gt-vG-3C2" secondAttribute="trailing" id="riW-7g-dAX"/>
+                                                <constraint firstItem="A1p-v3-8vv" firstAttribute="trailing" secondItem="geG-h7-lze" secondAttribute="trailing" id="yq5-yi-wCf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bottomContainerView" destination="5Gt-vG-3C2" id="kTN-EJ-wXB"/>
-                                            <outlet property="description1Label" destination="UVl-fK-V5c" id="oOr-r8-zSd"/>
-                                            <outlet property="description2Label" destination="UeX-UN-sI1" id="RHN-d2-hto"/>
-                                            <outlet property="description3Label" destination="Ce8-9K-ue4" id="G2m-z0-xzf"/>
-                                            <outlet property="icon1ImageView" destination="S56-uB-66u" id="ufd-EE-N9M"/>
-                                            <outlet property="icon2ImageView" destination="dCb-Uc-0pg" id="Krh-x4-exz"/>
-                                            <outlet property="icon3ImageView" destination="Pf7-5u-1mW" id="jN9-8o-fbq"/>
+                                            <outlet property="categoryLabel" destination="8CH-eJ-Qbu" id="xJV-hO-90w"/>
+                                            <outlet property="durationLabel" destination="stB-3D-mOu" id="vrj-Yu-iON"/>
+                                            <outlet property="iconImageView" destination="dYV-kQ-Du3" id="3zc-23-vg5"/>
+                                            <outlet property="lockedCoverView" destination="A1p-v3-8vv" id="tBf-Ze-RsA"/>
+                                            <outlet property="subcategoryLabel" destination="XAx-Gq-pgW" id="X7F-oU-vHr"/>
                                             <outlet property="taskNoLabel" destination="c38-od-Ls2" id="gIe-f1-XPf"/>
                                             <outlet property="topContainerView" destination="geG-h7-lze" id="Ufs-y6-gDq"/>
                                             <outlet property="weekdayStrLabel" destination="fZw-Vn-2M7" id="Is8-i5-IPz"/>
@@ -3299,19 +3277,19 @@ DividerLine</string>
                                 </prototypes>
                             </tableView>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQ7-Z5-AR3" userLabel="LoadingContainerView">
-                                <rect key="frame" x="217" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="397" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-Iw-DtQ">
                                         <rect key="frame" x="94" y="250" width="187.5" height="167"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmW-B3-LHv">
-                                        <rect key="frame" x="146" y="437" width="64" height="21"/>
+                                        <rect key="frame" x="145" y="437" width="64" height="21"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzE-sX-5J1">
-                                        <rect key="frame" x="215" y="437" width="13" height="21"/>
+                                        <rect key="frame" x="214" y="437" width="13" height="21"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -3365,7 +3343,7 @@ DividerLine</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbJ-gO-Of8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2225" y="-573"/>
+            <point key="canvasLocation" x="-2226.4000000000001" y="-573.46326836581716"/>
         </scene>
     </scenes>
     <resources>
@@ -3380,9 +3358,6 @@ DividerLine</string>
         <image name="complex_emotions" width="317" height="300"/>
         <image name="cross" width="27" height="27"/>
         <image name="day_complete" width="244" height="264"/>
-        <image name="icoGoal_blue" width="118" height="124"/>
-        <image name="icoQuiz_blue" width="120" height="119"/>
-        <image name="icoWatch_blue" width="120" height="118"/>
         <image name="ico_invisible" width="29" height="19"/>
         <image name="infographsample" width="1136" height="577"/>
         <image name="line-Characters_transparent" width="1137" height="771"/>

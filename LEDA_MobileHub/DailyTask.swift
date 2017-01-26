@@ -293,6 +293,45 @@ class UserTask: NSObject, NSCoding {
     }
 }
 
+struct UserTaskStatusResult {
+    var isCompleted: Bool
+    var taskDay: Int
+    
+    var tasks: [String: UserTaskStatusResultItem]
+    
+    
+}
+
+struct UserTaskStatusResultItem {
+    var attempts: [String: AttemptItem]
+    var isComplete: Bool
+    var type: String
+}
+
+struct AttemptItem {
+    var date: Double
+    var isComplete: Bool
+    
+    // video
+    var rating: Int
+    var adjective: String
+    
+    // quiz
+    var answers: [Int]
+    var result: Int
+    
+    // checkoff
+    var items: [Bool]
+    
+    init(date: Double = 0, isComplete: Bool = false, rating: Int = 0, adjective: String = "", answers: [Int] = [Int](), result: Int = 0, items: [Bool] = [Bool]()) {
+        self.date = date
+        self.isComplete = isComplete
+        self.rating = rating
+        self.adjective = adjective
+        
+    }
+}
+
 struct DayTaskResult {
     
     var type: String

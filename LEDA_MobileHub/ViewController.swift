@@ -35,7 +35,18 @@ class ViewController: UIViewController {
     //========================================
     @IBAction func insert(_ sender: Any) {
        
-        
+        if let obj = KeychainSwift().getData("TaskArr"), let arr = NSKeyedUnarchiver.unarchiveObject(with: obj) as? [Task] {
+            print("arr ❗️ \(arr)")
+            for item in arr {
+                
+                if item.taskDay == "1" && item.sort == "\(1)" {
+                    print(" ✅ \(item.taskCategory) \(item.taskSubcategory) \(item.taskDurationSeconds)")
+                }
+                
+                
+            }
+        }
+
         
     }
     

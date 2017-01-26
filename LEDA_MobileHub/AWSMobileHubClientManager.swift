@@ -408,7 +408,7 @@ class AWSMobileHubClientManager {
     //========================================
     // MARK: - Query UserTaskStatus
     //========================================
-    func queryUserTaskStatus(withTask dayNo: Int) {
+    func queryUserTaskStatus(withTask dayNo: Int, completion: @escaping ()->()) {
         
         let objMapper = AWSDynamoDBObjectMapper.default()
         
@@ -430,6 +430,10 @@ class AWSMobileHubClientManager {
                 
                 if let items = output?.items {
                     print("queryUserTaskStatus ✅ \(items)")
+                    
+                    
+                    
+                    completion()
                 }
             }
         }

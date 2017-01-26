@@ -87,16 +87,21 @@ class WeekviewTasksViewController: UIViewController {
             
             self.tableView.scrollToRow(at: IndexPath(row: self.activeTaskIndexInTableView, section: 0), at: UITableViewScrollPosition.middle, animated: false)
             
-            self.showLoadingScreen(shouldShow: false)
             
             
-            
+            if let max = KeychainSwift().get(KC_ANALYTICS_MAX_DAYS_IN_ROW) {
+                AWSMobileHubClientManager.shared.queryUserTaskStatus(withTask: Int(max)!) {
+                    
+                    self.showLoadingScreen(shouldShow: false)
+                }
+            }
         }
         
         
         
         
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -167,85 +172,88 @@ class WeekviewTasksViewController: UIViewController {
         
         
         
-//        var wdArr = weekdayArr
-//        var tnArr = taskNoArr
+        //        var wdArr = weekdayArr
+        //        var tnArr = taskNoArr
         
-//        AWSMobileHubClientManager.shared.getUserPoolDetail {
-//            if let custom = KeychainSwift().get(KC_CUSTOM_START_DATE) {
-//                let current = Helper.shared.getCurrentDateStr()
-//                if let diff = Helper.shared.getNumOfDaysBetweenTwoDates(date1Str: current, date2Str: custom) {
-//                    if diff > 6 {
-//                        if wdArr[0] == 7 {
-//                            wdArr.removeFirst()
-//                            wdArr.removeFirst()
-//                            wdArr.append(7)
-//                            wdArr.append(1)
-//                            
-//                            tnArr.removeFirst()
-//                            tnArr.removeFirst()
-//                            tnArr.append(-1)
-//                            tnArr.append(-1)
-//                            
-//                        } else if wdArr[0] == 1 {
-//                            wdArr.removeFirst()
-//                            wdArr.append(1)
-//                            
-//                            tnArr.removeFirst()
-//                            tnArr.append(-1)
-//                        }
-//                    }
-//                    
-//                    print("wdArr ✅ \(wdArr)")
-//                    UserDefaults.standard.set(wdArr, forKey: UD_USER_DATA_WEEKDAYS_ARRAY)
-//                    UserDefaults.standard.set(tnArr, forKey: UD_USER_DATA_TASKS_ARRAY)
-//                    
-//                    var i = 0
-//                    
-//                    for item in tnArr {
-//                        
-//                        if item == num {
-//                            if wdArr[i] != 7 && wdArr[i] != 1 {
-//                                self.activeTaskIndexInTableView = i
-//                            }
-//                        }
-//                        
-//                        i += 1
-//                    }
-//                    
-//                    
-//                    self.currentSelectedCell = self.activeTaskIndexInTableView
-//                    self.previousSelectedCell = self.activeTaskIndexInTableView
-//                    self.isSameSelectedCell = false
-//                    print("activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
-//                    
-//                    completion()
-//                    
-//                }
-//            }
-//        }
-        
-        
-        
-                var i = 0
-        
-                for item in taskNoArr {
-        
-                    if item == num {
-                        if weekdayArr[i] != 7 && weekdayArr[i] != 1 {
-                            self.activeTaskIndexInTableView = i
+        AWSMobileHubClientManager.shared.getUserPoolDetail {
+            if let custom = KeychainSwift().get(KC_CUSTOM_START_DATE) {
+                let current = Helper.shared.getCurrentDateStr()
+                if let diff = Helper.shared.getNumOfDaysBetweenTwoDates(date1Str: current, date2Str: custom) {
+                    
+                    UserDefaults.standard.set(diff, forKey: "NumOfTasksUnlocked")
+                    
+                    //                    if diff > 6 {
+                    //                        if wdArr[0] == 7 {
+                    //                            wdArr.removeFirst()
+                    //                            wdArr.removeFirst()
+                    //                            wdArr.append(7)
+                    //                            wdArr.append(1)
+                    //
+                    //                            tnArr.removeFirst()
+                    //                            tnArr.removeFirst()
+                    //                            tnArr.append(-1)
+                    //                            tnArr.append(-1)
+                    //
+                    //                        } else if wdArr[0] == 1 {
+                    //                            wdArr.removeFirst()
+                    //                            wdArr.append(1)
+                    //
+                    //                            tnArr.removeFirst()
+                    //                            tnArr.append(-1)
+                    //                        }
+                    //                    }
+                    //
+                    //                    print("wdArr ✅ \(wdArr)")
+                    //                    UserDefaults.standard.set(wdArr, forKey: UD_USER_DATA_WEEKDAYS_ARRAY)
+                    //                    UserDefaults.standard.set(tnArr, forKey: UD_USER_DATA_TASKS_ARRAY)
+                    //
+                    var i = 0
+                    
+                    for item in taskNoArr {
+                        
+                        if item == num {
+                            if weekdayArr[i] != 7 && weekdayArr[i] != 1 {
+                                self.activeTaskIndexInTableView = i
+                            }
                         }
+                        
+                        i += 1
                     }
-        
-                    i += 1
+                    
+                    
+                    self.currentSelectedCell = self.activeTaskIndexInTableView
+                    self.previousSelectedCell = self.activeTaskIndexInTableView
+                    self.isSameSelectedCell = false
+                    print("activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
+                    
+                    completion()
+                    
                 }
+            }
+        }
         
         
-                self.currentSelectedCell = self.activeTaskIndexInTableView
-                self.previousSelectedCell = self.activeTaskIndexInTableView
-                self.isSameSelectedCell = false
-                print("activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
         
-                completion()
+        //                var i = 0
+        //
+        //                for item in taskNoArr {
+        //
+        //                    if item == num {
+        //                        if weekdayArr[i] != 7 && weekdayArr[i] != 1 {
+        //                            self.activeTaskIndexInTableView = i
+        //                        }
+        //                    }
+        //
+        //                    i += 1
+        //                }
+        //
+        //
+        //                self.currentSelectedCell = self.activeTaskIndexInTableView
+        //                self.previousSelectedCell = self.activeTaskIndexInTableView
+        //                self.isSameSelectedCell = false
+        //                print("activeTaskIndexInTableView: \(self.activeTaskIndexInTableView)")
+        //
+        //                completion()
         
     }
     
@@ -331,7 +339,7 @@ extension WeekviewTasksViewController: UITableViewDataSource {
         
         if let taskNoArr = UserDefaults.standard.object(forKey: UD_USER_DATA_TASKS_ARRAY) as? [Int], let weekdayArr = UserDefaults.standard.object(forKey: UD_USER_DATA_WEEKDAYS_ARRAY) as? [Int] {
             
-//            print("cellForRowAt ✅ taskNoArr: \(taskNoArr), weekdayArr: \(weekdayArr)")
+            //            print("cellForRowAt ✅ taskNoArr: \(taskNoArr), weekdayArr: \(weekdayArr)")
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeekviewCell") as! WeekviewTaskTableViewCell
             cell.selectionStyle = .none
@@ -387,40 +395,58 @@ extension WeekviewTasksViewController: UITableViewDelegate {
         print("✅")
         
         
-        if !isSameSelectedCell {
-            
-            UIView.animate(withDuration: 3.0) {
+        // do something only when the cell is unlocked
+        if let diff = UserDefaults.standard.object(forKey: "NumOfTasksUnlocked") as? Int, let taskNoArr = Helper.shared.getTasksArr() {
+            if diff >= taskNoArr[indexPath.row] {
                 
-                selectedCell.contentView.layoutIfNeeded()
-            }
-            
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            
-            tableView.scrollToRow(at: IndexPath(row: indexPath.row, section: 0), at: UITableViewScrollPosition.middle, animated: true)
-        }
-            
-        else {
-            
-            cellRectBeforeExpanding = tableView.rectForRow(at: indexPath)
-            
-            DispatchQueue.main.async {
-                
-                UIView.animate(withDuration: 3.0, animations: {
-                    selectedCell.contentView.layoutIfNeeded()
-                }, completion: { (_) in
+                if !isSameSelectedCell {
+                    // if it's not the same cell, expand it
                     
-                    let dailyVC = self.storyboard!.instantiateViewController(withIdentifier: "DailyTasksViewController") as! DailyTasksViewController
-                    dailyVC.transitioningDelegate = self
-                    dailyVC.selectedIndex = self.currentSelectedCell
-                    self.present(dailyVC, animated: true, completion: nil)
+                    UIView.animate(withDuration: 3.0) {
+                        selectedCell.contentView.layoutIfNeeded()
+                    }
                     
-                })
-                
-                tableView.beginUpdates()
-                tableView.endUpdates()
-                
-                tableView.scrollToRow(at: IndexPath(row: indexPath.row, section: 0), at: UITableViewScrollPosition.middle, animated: true)
+                    tableView.beginUpdates()
+                    tableView.endUpdates()
+                    
+                    tableView.scrollToRow(at: IndexPath(row: indexPath.row, section: 0), at: UITableViewScrollPosition.middle, animated: true)
+                    
+                }
+                    
+                else {
+                    
+                    
+                    guard let currentActive = KeychainSwift().get(KC_ANALYTICS_MAX_DAYS_IN_ROW) else {
+                        print("currentActive ❌ ")
+                        return }
+                    
+                    if Int(currentActive)! == taskNoArr[indexPath.row] {
+                        // if it's the current active cell, go to task
+                        
+                        cellRectBeforeExpanding = tableView.rectForRow(at: indexPath)
+                        
+                        DispatchQueue.main.async {
+                            
+                            UIView.animate(withDuration: 3.0, animations: {
+                                selectedCell.contentView.layoutIfNeeded()
+                            }, completion: { (_) in
+                                
+                                let dailyVC = self.storyboard!.instantiateViewController(withIdentifier: "DailyTasksViewController") as! DailyTasksViewController
+                                dailyVC.transitioningDelegate = self
+                                dailyVC.passedSelectedIndex = self.currentSelectedCell
+                                self.present(dailyVC, animated: true, completion: nil)
+                                
+                            })
+                            
+                            tableView.beginUpdates()
+                            tableView.endUpdates()
+                            
+                            tableView.scrollToRow(at: IndexPath(row: indexPath.row, section: 0), at: UITableViewScrollPosition.middle, animated: true)
+                            
+                        }
+                        
+                    }
+                }
                 
             }
         }
